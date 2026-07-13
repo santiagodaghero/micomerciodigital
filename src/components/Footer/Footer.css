@@ -1,0 +1,63 @@
+.footer {
+  background: var(--text);
+  color: white;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__logo-img {
+  height: 2.5rem;
+  width: auto;
+  margin: 0 auto;
+  filter: brightness(0) invert(1);
+}
+
+.footer__text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.footer__social {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__social-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer__social-link:hover {
+  color: white;
+}
+
+.footer__whatsapp {
+  color: #25d366;
+}
+
+.footer__whatsapp:hover {
+  color: #20bd5a;
+}
+
+.footer__copy {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .footer__social {
+    gap: 1rem;
+  }
+}
