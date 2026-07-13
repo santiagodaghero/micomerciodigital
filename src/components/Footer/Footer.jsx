@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__container">
         <div className="footer__brand">
-          <img src="/img/logo.png" alt="Logo MiComercioDigital" className="footer__logo-img" />
+          <img src={`${import.meta.env.BASE_URL}img/logo.png`} alt="Logo MiComercioDigital" className="footer__logo-img" />
           <p className="footer__text">
             Creamos tu presencia digital
           </p>

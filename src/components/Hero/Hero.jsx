@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="hero" className="hero">
       <div className="hero__content">
         <div className="hero__logo">
-          <img src="/img/logogrande.png" alt="Logo MiComercioDigital" className="hero__logo-img" />
+          <img src={`${import.meta.env.BASE_URL}img/logogrande.png`} alt="Logo MiComercioDigital" className="hero__logo-img" />
         </div>
         <p className="hero__subtitle">Creamos tu presencia digital</p>
       </div>

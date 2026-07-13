@@ -17,7 +17,7 @@ export default function Header() {
     <header className="header">
       <div className="header__container container">
         <a href="#hero" className="header__logo" onClick={closeMenu}>
-          <img src="/img/logo.png?v=2" alt="Logo" className="header__logo-img" />
+          <img src={`${import.meta.env.BASE_URL}img/logo.png`} alt="Logo" className="header__logo-img" />
         </a>
 
         <button
