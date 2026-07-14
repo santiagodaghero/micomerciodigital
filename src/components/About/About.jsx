@@ -22,7 +22,7 @@ export default function About() {
           <div className="about__grid">
             <div className="about__card">
               <div className="about__card-icon">
-                <i className="fa-solid fa-desktop"></i>
+                <img src={`${import.meta.env.BASE_URL}img/diseño_profesional.png`} alt="Diseño Profesional" />
               </div>
               <h3 className="about__card-title">Diseño Profesional</h3>
               <p className="about__card-desc">
@@ -32,7 +32,7 @@ export default function About() {
 
             <div className="about__card">
               <div className="about__card-icon">
-                <i className="fa-solid fa-code"></i>
+                <img src={`${import.meta.env.BASE_URL}img/desarrollo_a_medida.png`} alt="Desarrollo a Medida" />
               </div>
               <h3 className="about__card-title">Desarrollo a Medida</h3>
               <p className="about__card-desc">
@@ -42,7 +42,7 @@ export default function About() {
 
             <div className="about__card">
               <div className="about__card-icon">
-                <i className="fa-solid fa-chart-column"></i>
+                <img src={`${import.meta.env.BASE_URL}img/soluciones_inteligentes.png`} alt="Soluciones Inteligentes" />
               </div>
               <h3 className="about__card-title">Soluciones Inteligentes</h3>
               <p className="about__card-desc">
@@ -52,7 +52,7 @@ export default function About() {
 
             <div className="about__card">
               <div className="about__card-icon">
-                <i className="fa-solid fa-users"></i>
+                <img src={`${import.meta.env.BASE_URL}img/acompañamiento.png`} alt="Acompañamiento" />
               </div>
               <h3 className="about__card-title">Acompañamiento</h3>
               <p className="about__card-desc">
