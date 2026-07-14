@@ -63,20 +63,15 @@
 }
 
 .about__card-icon {
-  width: 82px;
-  height: 82px;
   margin: 0 auto 1.5rem;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-light);
-  overflow: hidden;
 }
 
 .about__card-icon img {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 
@@ -124,14 +119,9 @@
     padding: 1.75rem 1.25rem;
   }
 
-  .about__card-icon {
-    width: 64px;
-    height: 64px;
-  }
-
   .about__card-icon img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
   }
 
   .about__card-title {
