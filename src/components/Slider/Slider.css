@@ -92,3 +92,29 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 500px) {
+  .slider {
+    gap: 0.25rem;
+  }
+
+  .slider__slide {
+    padding: 0 0.25rem;
+  }
+
+  .slider__btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .slider__dots {
+    bottom: -1.25rem;
+    gap: 0.3rem;
+  }
+
+  .slider__dot {
+    width: 6px;
+    height: 6px;
+  }
+}

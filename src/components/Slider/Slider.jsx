@@ -1,15 +1,43 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Slider.css'
 
 export default function Slider({ children, visibleCount = 3 }) {
   const total = children.length
-  const maxIndex = Math.max(0, total - visibleCount)
   const [current, setCurrent] = useState(0)
+  const [screenVisible, setScreenVisible] = useState(visibleCount)
 
-  const next = () => setCurrent((prev) => Math.min(prev + 1, maxIndex))
-  const prev = () => setCurrent((prev) => Math.max(prev - 1, 0))
+  useEffect(() => {
+    const getVisible = () => {
+      const w = window.innerWidth
+      if (w <= 500) return 1
+      if (w <= 768) return 2
+      return visibleCount
+    }
 
-  if (total <= visibleCount) {
+    setScreenVisible(getVisible())
+
+    const handler = () => {
+      const next = getVisible()
+      setScreenVisible((prev) => {
+        if (prev !== next) setCurrent(0)
+        return next
+      })
+    }
+
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [visibleCount])
+
+  const maxIndex = Math.max(0, total - screenVisible)
+
+  useEffect(() => {
+    if (current > maxIndex) setCurrent(maxIndex)
+  }, [maxIndex, current])
+
+  const goNext = () => setCurrent((prev) => Math.min(prev + 1, maxIndex))
+  const goPrev = () => setCurrent((prev) => Math.max(prev - 1, 0))
+
+  if (total <= screenVisible) {
     return <div className="slider__grid">{children}</div>
   }
 
@@ -17,7 +45,7 @@ export default function Slider({ children, visibleCount = 3 }) {
     <div className="slider">
       <button
         className="slider__btn slider__btn--prev"
-        onClick={prev}
+        onClick={goPrev}
         disabled={current === 0}
         aria-label="Anterior"
       >
@@ -29,7 +57,7 @@ export default function Slider({ children, visibleCount = 3 }) {
           className="slider__track"
           style={{
             transform: `translateX(-${current * (100 / total)}%)`,
-            width: `${(total / visibleCount) * 100}%`,
+            width: `${(total / screenVisible) * 100}%`,
           }}
         >
           {children.map((child, i) => (
@@ -46,7 +74,7 @@ export default function Slider({ children, visibleCount = 3 }) {
 
       <button
         className="slider__btn slider__btn--next"
-        onClick={next}
+        onClick={goNext}
         disabled={current === maxIndex}
         aria-label="Siguiente"
       >

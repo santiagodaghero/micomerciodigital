@@ -279,7 +279,44 @@
     flex-direction: column;
   }
 
+  .detail__projects {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+  }
+
   .detail__projects-title {
     font-size: 1.25rem;
+  }
+
+  .detail__projects-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .project-card__image {
+    font-size: 2rem;
+  }
+
+  .project-card__body {
+    padding: 1rem;
+  }
+
+  .project-card__title {
+    font-size: 0.9rem;
+  }
+
+  .project-card__desc {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .detail__main {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .detail__whatsapp {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
   }
 }
