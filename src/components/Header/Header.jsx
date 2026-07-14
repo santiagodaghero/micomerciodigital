@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__container container">
-        <a href="#hero" className="header__logo" onClick={closeMenu}>
+        <a href="/" className="header__logo" onClick={(e) => { e.preventDefault(); window.location.href = '/' }}>
           <img src={`${import.meta.env.BASE_URL}img/logo.png`} alt="Logo" className="header__logo-img" />
         </a>
 
