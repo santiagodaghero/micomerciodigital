@@ -27,10 +27,6 @@ export default function Footer() {
         <p className="footer__copy">
           &copy; {new Date().getFullYear()} MiComercioDigital. Todos los derechos reservados.
         </p>
-
-        <button className="footer__top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Volver arriba">
-          &#8593;
-        </button>
       </div>
     </footer>
   )
