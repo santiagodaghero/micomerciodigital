@@ -12,5 +12,5 @@ function removeCrossorigin() {
 
 export default defineConfig(({ command }) => ({
   plugins: [react(), removeCrossorigin()],
-  base: command === 'build' ? '/micomerciodigital/' : '/',
+  base: '/',
 }))

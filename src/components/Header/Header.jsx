@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 const navLinks = [
@@ -21,9 +22,9 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__container container">
-        <a href="/" className="header__logo" onClick={(e) => { e.preventDefault(); window.location.href = '/' }}>
+        <Link to="/" className="header__logo" onClick={() => setMenuOpen(false)}>
           <img src={`${import.meta.env.BASE_URL}img/logo.png`} alt="Logo" className="header__logo-img" />
-        </a>
+        </Link>
 
         <button
           className={`header__hamburger ${menuOpen ? 'header__hamburger--open' : ''}`}
