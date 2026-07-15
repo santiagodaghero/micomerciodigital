@@ -2,7 +2,7 @@ export const servicesData = [
   {
     id: 1,
     name: 'Portfolio Profesional',
-    icon: '/img/Portfolio Profesional.png',
+    icon: `${import.meta.env.BASE_URL}img/Portfolio Profesional.png`,
     description:
       'Portfolio web personalizado para mostrar tu trabajo, proyectos y experiencia. Ideal para freelancers, diseñadores, desarrolladores y creativos.',
     includes: [
@@ -19,7 +19,7 @@ export const servicesData = [
   {
     id: 2,
     name: 'Landing Page',
-    icon: '/img/Landing Page.png',
+    icon: `${import.meta.env.BASE_URL}img/Landing Page.png`,
     description:
       'Página web única y profesional para promocionar tu producto, servicio o evento. Enfocada en conversión y velocidad.',
     includes: [
@@ -36,7 +36,7 @@ export const servicesData = [
   {
     id: 4,
     name: 'E-commerce',
-    icon: '/img/E-commerce.png',
+    icon: `${import.meta.env.BASE_URL}img/E-commerce.png`,
     description:
       'Tienda online completa para vender tus productos o servicios en internet. Sistema de pagos, gestión de stock y panel de administración incluido.',
     includes: [
@@ -53,7 +53,7 @@ export const servicesData = [
   {
     id: 3,
     name: 'Dashboard Power BI',
-    icon: '/img/Dashboard Power BI.png',
+    icon: `${import.meta.env.BASE_URL}img/Dashboard Power BI.png`,
     description:
       'Visualización interactiva de tus datos con dashboards profesionales en Power BI. Transformamos tus números en decisiones.',
     includes: [
