@@ -6,7 +6,7 @@ export default function ServiceCard({ service }) {
     <Link to={`/servicio/${service.id}`} className="card">
       <div className="card__image">
         <div className="card__image-placeholder">
-          <span className="card__image-icon">📸</span>
+          <img src={service.icon} alt={service.name} className="card__image-icon" />
         </div>
       </div>
 

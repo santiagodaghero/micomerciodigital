@@ -34,8 +34,10 @@
 }
 
 .card__image-icon {
-  font-size: 2rem;
-  opacity: 0.4;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  opacity: 0.85;
 }
 
 /* --- INFO SECTION: white + celeste --- */

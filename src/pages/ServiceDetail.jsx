@@ -147,10 +147,7 @@ export default function ServiceDetail() {
       <main className="detail__main">
         <div className="detail__intro">
           <div className="detail__image">
-            <div className="detail__image-placeholder">
-              <span>📸</span>
-              <p>Imagen del servicio</p>
-            </div>
+            <img src={service.icon} alt={service.name} className="detail__image-icon" />
           </div>
 
           <div className="detail__content">

@@ -45,22 +45,13 @@
   width: 300px;
 }
 
-.detail__image-placeholder {
+.detail__image-icon {
   width: 100%;
   aspect-ratio: 4 / 3;
+  object-fit: contain;
   background: var(--border);
   border-radius: var(--radius);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  color: var(--text-light);
-  font-size: 2rem;
-}
-
-.detail__image-placeholder p {
-  font-size: 0.85rem;
+  padding: 1.5rem;
 }
 
 .detail__content {
