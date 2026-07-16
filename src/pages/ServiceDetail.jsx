@@ -7,78 +7,54 @@ import './ServiceDetail.css'
 const projectsData = {
   1: [
     {
-      name: 'Portfolio - María García',
-      image: '🎨',
+      name: 'Portfolio - Diseñadora UX/UI',
+      image: `${import.meta.env.BASE_URL}mockup/Portfolio-uiux.PNG`,
       description:
-        'Portfolio minimalista para diseñadora UX/UI con galería interactiva y modo oscuro.',
+        'Portfolio minimalista para diseñadora UX/UI con galería donde muestra sus trabajos destacados.',
     },
     {
-      name: 'Portfolio - Carlos Méndez',
-      image: '📷',
+      name: 'Portfolio - Fotográfico',
+      image: `${import.meta.env.BASE_URL}mockup/Portfolio-Fotografia.PNG`,
       description:
-        'Portfolio fotográfico con galería masonry, lightbox y formulario de reservas.',
+        'Portfolio de fotografía para mostrar proyectos y trabajos, integración de redes sociales y tienda para venta de fotografías.',
     },
     {
-      name: 'Portfolio - Ana López',
-      image: '✏️',
+      name: 'Portfolio - Interiorismo',
+      image: `${import.meta.env.BASE_URL}mockup/Portfolio-Interiorismo.PNG`,
       description:
-        'Portfolio para ilustradora con showroom interactivo y tienda integrada.',
-    },
-    {
-      name: 'Portfolio - Franco Ruiz',
-      image: '💻',
-      description:
-        'Portfolio dev con proyectos en vivo, blog técnico y enlace a repos.',
-    },
-    {
-      name: 'Portfolio - Sofía Torres',
-      image: '📱',
-      description:
-        'Portfolio para creadora de contenido con integración a redes sociales.',
-    },
-    {
-      name: 'Portfolio - Lucas Paz',
-      image: '🎵',
-      description:
-        'Portfolio para productor musical con reproductor embebido y galería de videos.',
+        'Portfolio de interiorismo y paisajismo donde muestra proyectos de espacios residenciales y comerciales, combinando materiales, texturas y vegetación.',
     },
   ],
   2: [
     {
-      name: 'Landing - FitClub',
-      image: '💪',
+      name: 'Servicios para Estudios Profesionales',
+      image: `${import.meta.env.BASE_URL}mockup/Estudio-Profesional.PNG`,
       description:
-        'Landing para gimnasio con animaciones, formulario de inscripción y mapa.',
+        'Sitio ideal para servicios profesionales: contables, abogacía, gestorías y consultorías.',
     },
     {
-      name: 'Landing - Café Montaña',
-      image: '☕',
+      name: 'Estudio de Arquitectura',
+      image: `${import.meta.env.BASE_URL}mockup/LandingPage-Arquitectura.PNG`,
       description:
-        'Página promocional para cafetería con menú digital y galería.',
+        'Landing para estudio de arquitectos donde muestra sus proyectos, ideas y equipo de trabajo.',
     },
     {
-      name: 'Landing - EcoClean',
-      image: '🌿',
+      name: 'Estética',
+      image: `${import.meta.env.BASE_URL}mockup/LandingPage-Estetica.PNG`,
       description:
-        'Landing para servicio de limpieza ecológica con cotizador online.',
+        'Cuidado integral con una amplia gama de tratamientos estéticos y de bienestar.',
     },
     {
-      name: 'Landing - Estudio Jurídico',
-      image: '⚖️',
+      name: 'Restaurante',
+      image: `${import.meta.env.BASE_URL}mockup/LandingPage-restaurante.PNG`,
       description:
-        'Página profesional para estudio de abogados con áreas de práctica y contacto.',
+        'Página de restaurante con carta, menú destacado y sistema de reservas.',
     },
     {
-      name: 'Landing - Mascotas Felices',
-      image: '🐾',
+      name: 'Inmobiliaria',
+      image: `${import.meta.env.BASE_URL}mockup/LandingPage-Inmobiliaria.PNG`,
       description:
-        'Landing para veterinaria con agenda online y testimonios de clientes.',
-    },
-    {
-      name: 'Landing - Taller Mecánico',
-      image: '🔧',
-      description:
-        'Página para taller con servicios, presupuesto online y ubicación.',
+        'Sitio web para encontrar las mejores propiedades, con búsqueda por ubicación, precio y características.',
     },
   ],
   3: [
@@ -119,6 +95,26 @@ const projectsData = {
         'Panel para restaurante con ventas diarias, platos top y rotación de mesas.',
     },
   ],
+  4: [
+    {
+      name: 'E-Commerce - Dietética',
+      image: `${import.meta.env.BASE_URL}mockup/E-comerce.png`,
+      description:
+        'Tienda online de alimentos saludables con catálogo de productos, filtros dietéticos y pedidos a domicilio.',
+    },
+    {
+      name: 'E-Commerce - Moda Urbana',
+      image: '👕',
+      description:
+        'Tienda de ropa con galería de productos, tallas y envío a todo el país.',
+    },
+    {
+      name: 'E-Commerce - FreshMarket',
+      image: '🍎',
+      description:
+        'Tienda de productos frescos con delivery, carrito y gestión de stock.',
+    },
+  ],
 }
 
 export default function ServiceDetail() {
@@ -146,12 +142,13 @@ export default function ServiceDetail() {
 
       <main className="detail__main">
         <div className="detail__intro">
-          <div className="detail__image">
-            <img src={service.icon} alt={service.name} className="detail__image-icon" />
-          </div>
-
           <div className="detail__content">
-            <h1 className="detail__title">{service.name}</h1>
+            <div className="detail__title-row">
+              <div className="detail__image detail__image--small">
+                <img src={service.icon} alt={service.name} className="detail__image-icon" />
+              </div>
+              <h1 className="detail__title">{service.name}</h1>
+            </div>
             <p className="detail__description">{service.description}</p>
 
             <div className="detail__includes">
@@ -197,12 +194,15 @@ export default function ServiceDetail() {
               {projects.map((project) => (
                 <div key={project.name} className="project-card">
                   <div className="project-card__image">
-                    <span>{project.image}</span>
+                    {project.image.length > 2 ? (
+                      <img src={project.image} alt={project.name} />
+                    ) : (
+                      <span>{project.image}</span>
+                    )}
                   </div>
                   <div className="project-card__body">
                     <h3 className="project-card__title">{project.name}</h3>
                     <p className="project-card__desc">{project.description}</p>
-
                   </div>
                 </div>
               ))}

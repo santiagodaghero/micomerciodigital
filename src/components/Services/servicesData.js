@@ -18,10 +18,10 @@ export const servicesData = [
   },
   {
     id: 2,
-    name: 'Landing Page',
+    name: 'Página Web',
     icon: `${import.meta.env.BASE_URL}img/Landing Page.png`,
     description:
-      'Página web única y profesional para promocionar tu producto, servicio o evento. Enfocada en conversión y velocidad.',
+      'Página web única y profesional para promocionar tu producto, servicio o evento. Enfocada en lograr un gran alcance con optimización SEO y diseño responsive mobile.',
     includes: [
       'Diseño único',
       'Hosting 1 año',
