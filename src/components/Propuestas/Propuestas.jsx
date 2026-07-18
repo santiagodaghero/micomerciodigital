@@ -13,21 +13,23 @@ export default function Propuestas() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.15}>
-          <div className="propuestas__card">
-            <div className="propuestas__img-wrapper">
-              <img
-                src={`${import.meta.env.BASE_URL}mockup/E-comerce.png`}
-                alt="Propuesta E-Commerce"
-              />
-            </div>
-            <div className="propuestas__info">
-              <span className="propuestas__tag">E-Commerce</span>
-              <h3>Tu Tienda Online Profesional</h3>
-              <p>
-                Desarrollamos tu plataforma de e-commerce con diseño moderno,
-                pasarela de pagos integrada y panel de administración para que
-                gestiones tus productos y pedidos fácilmente.
-              </p>
+          <div className="slider__grid">
+
+            <div className="project-card">
+
+              <div className="project-card__image">
+                <img
+                  src={`${import.meta.env.BASE_URL}mockup/E-comerce.png`}
+                  alt="Dietética"
+                />
+              </div>
+              <div className="project-card__body">
+                <h3 className="project-card__title">Dietética</h3>
+                <p className="project-card__desc">
+                  Tienda online de alimentos saludables con catálogo de productos,
+                  filtros dietéticos y pedidos a domicilio.
+                </p>
+              </div>
             </div>
           </div>
         </AnimatedSection>

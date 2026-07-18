@@ -97,22 +97,18 @@ const projectsData = {
   ],
   4: [
     {
-      name: 'E-Commerce - Dietética',
+      name: 'Dietética',
       image: `${import.meta.env.BASE_URL}mockup/E-comerce.png`,
       description:
         'Tienda online de alimentos saludables con catálogo de productos, filtros dietéticos y pedidos a domicilio.',
     },
+  ],
+  5: [
     {
-      name: 'E-Commerce - Moda Urbana',
-      image: '👕',
+      name: 'Control Organizacional - Demo',
+      image: '📋',
       description:
-        'Tienda de ropa con galería de productos, tallas y envío a todo el país.',
-    },
-    {
-      name: 'E-Commerce - FreshMarket',
-      image: '🍎',
-      description:
-        'Tienda de productos frescos con delivery, carrito y gestión de stock.',
+        'Panel de gestión organizacional con calendario integrado, control de personal, asistencia, sueldos, stock y proyectos.',
     },
   ],
 }
@@ -149,7 +145,7 @@ export default function ServiceDetail() {
               </div>
               <h1 className="detail__title">{service.name}</h1>
             </div>
-            <p className="detail__description">{service.description}</p>
+            <p className="detail__description">{service.fullDescription || service.description}</p>
 
             <div className="detail__includes">
               <h3>¿Qué incluye?</h3>
@@ -185,9 +181,9 @@ export default function ServiceDetail() {
         {projects.length > 0 && (
           <section className="detail__projects">
             <AnimatedSection>
-              <h2 className="detail__projects-title">Propuestas de proyecto</h2>
+              <h2 className="detail__projects-title">Propuesta de proyecto</h2>
               <p className="detail__projects-subtitle">
-                Elige la que más se adapte a ti, y si buscas algo más personalizado también podemos hacerlo
+                Ejemplo de un e-commerce que puede adaptarse a lo que necesitás, y si buscás algo más personalizado también podemos hacerlo
               </p>
             </AnimatedSection>
             <Slider visibleCount={3}>

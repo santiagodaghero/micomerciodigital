@@ -67,4 +67,23 @@ export const servicesData = [
     price: 'ARS $60,000',
     customPrice: 'ARS $85,000',
   },
+  {
+    id: 5,
+    name: 'Control Organizacional',
+    icon: `${import.meta.env.BASE_URL}img/Control Organizacional.png`,
+    description:
+      'Sistema web de gestión organizacional que centraliza el funcionamiento interno de una empresa. Permite al administrador tener control total del negocio.',
+    fullDescription:
+      'Sistema web de gestión organizacional que centraliza el funcionamiento interno de una empresa: personal, asistencia y sueldos, stock, y proyectos, todo integrado en un calendario único que funciona como centro de mando. Permite al administrador tener control total del negocio, mientras cada usuario accede solo a la información y funciones que le corresponden según su rol.',
+    includes: [
+      'Gestión de personal',
+      'Control de asistencia y sueldos',
+      'Gestión de stock',
+      'Seguimiento de proyectos',
+      'Calendario integrado',
+      'Control por roles de usuario',
+    ],
+    price: 'ARS $90,000',
+    customPrice: 'ARS $130,000',
+  },
 ]
