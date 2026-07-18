@@ -33,6 +33,7 @@ export default function ServiceCard({ service }) {
           <span className="card__price-value">{service.customPrice}</span>
         </div>
       </div>
+
     </Link>
   )
 }

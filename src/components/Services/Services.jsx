@@ -1,5 +1,6 @@
 import { servicesData } from './servicesData'
 import ServiceCard from './ServiceCard'
+import ComparisonTable from './ComparisonTable'
 import AnimatedSection from '../AnimatedSection/AnimatedSection'
 import './Services.css'
 
@@ -21,6 +22,8 @@ export default function Services() {
           ))}
         </div>
       </div>
+
+      <ComparisonTable />
     </section>
   )
 }
