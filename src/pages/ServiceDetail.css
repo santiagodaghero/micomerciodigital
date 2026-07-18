@@ -140,7 +140,7 @@
 }
 
 .detail__price--custom {
-  background: linear-gradient(135deg, var(--water), #0f766e);
+  background: linear-gradient(135deg, #03CB7D, #0ea5e9);
   border-color: transparent;
   color: white;
 }
@@ -158,7 +158,7 @@
 }
 
 .detail__price--custom .detail__price-value {
-  color: #fcd34d;
+  color: white;
 }
 
 .detail__whatsapp {
