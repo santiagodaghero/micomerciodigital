@@ -25,7 +25,7 @@ export default function ServiceCard({ service }) {
 
       <div className="card__pricing">
         <div className="card__price-block">
-          <span className="card__price-label">Estimado</span>
+          <span className="card__price-label">Estándar</span>
           <span className="card__price-value">{service.price}</span>
         </div>
         <div className="card__price-block card__price-block--custom">

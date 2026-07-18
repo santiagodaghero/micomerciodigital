@@ -289,7 +289,7 @@ export default function ServiceDetail() {
 
             <div className="detail__pricing">
               <div className="detail__price">
-                <span className="detail__price-label">Precio estimado</span>
+                <span className="detail__price-label">Precio estándar</span>
                 <span className="detail__price-value">{service.price}</span>
               </div>
               <div className="detail__price detail__price--custom">

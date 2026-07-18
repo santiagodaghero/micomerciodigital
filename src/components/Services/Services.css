@@ -22,3 +22,12 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+
+.services__grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.services__grid > div > .card {
+  height: 100%;
+}

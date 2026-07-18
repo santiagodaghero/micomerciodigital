@@ -13,8 +13,8 @@ export const servicesData = [
       'Formulario de contacto',
       'Optimización SEO básica',
     ],
-    price: 'ARS $45,000',
-    customPrice: 'ARS $65,000',
+    price: 'ARS $300,000',
+    customPrice: 'ARS $450,000',
   },
   {
     id: 2,
@@ -30,8 +30,8 @@ export const servicesData = [
       'Analytics básicos',
       'Optimización SEO',
     ],
-    price: 'ARS $35,000',
-    customPrice: 'ARS $55,000',
+    price: 'ARS $300,000',
+    customPrice: 'ARS $450,000',
   },
   {
     id: 4,
@@ -47,8 +47,8 @@ export const servicesData = [
       'Panel admin',
       'Hosting 1 año',
     ],
-    price: 'ARS $80,000',
-    customPrice: 'ARS $120,000',
+    price: 'ARS $500,000',
+    customPrice: 'ARS $700,000',
   },
   {
     id: 3,
@@ -64,8 +64,8 @@ export const servicesData = [
       'Reporte exportable',
       'Capacitación 1 hora',
     ],
-    price: 'ARS $60,000',
-    customPrice: 'ARS $85,000',
+    price: 'ARS $350,000',
+    customPrice: 'ARS $550,000',
   },
   {
     id: 5,
@@ -83,7 +83,7 @@ export const servicesData = [
       'Calendario integrado',
       'Control por roles de usuario',
     ],
-    price: 'ARS $90,000',
-    customPrice: 'ARS $130,000',
+    price: 'ARS $800,000',
+    customPrice: 'ARS $1,200,000',
   },
 ]
