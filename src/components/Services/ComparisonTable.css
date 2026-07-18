@@ -59,10 +59,11 @@
 
 .comparison__note {
   color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-style: italic;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
