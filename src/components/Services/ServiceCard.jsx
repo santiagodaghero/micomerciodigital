@@ -24,10 +24,12 @@ export default function ServiceCard({ service }) {
       </div>
 
       <div className="card__pricing">
-        <div className="card__price-block">
-          <span className="card__price-label">Estándar</span>
-          <span className="card__price-value">{service.price}</span>
-        </div>
+        {service.price && (
+          <div className="card__price-block">
+            <span className="card__price-label">Estándar</span>
+            <span className="card__price-value">{service.price}</span>
+          </div>
+        )}
         <div className="card__price-block card__price-block--custom">
           <span className="card__price-label">Personalizado</span>
           <span className="card__price-value">{service.customPrice}</span>

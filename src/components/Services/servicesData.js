@@ -83,7 +83,7 @@ export const servicesData = [
       'Calendario integrado',
       'Control por roles de usuario',
     ],
-    price: 'ARS $800,000',
-    customPrice: 'ARS $1,200,000',
+    price: null,
+    customPrice: 'ARS $800,000 - $1,200,000',
   },
 ]

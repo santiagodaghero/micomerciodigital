@@ -288,10 +288,12 @@ export default function ServiceDetail() {
             </div>
 
             <div className="detail__pricing">
-              <div className="detail__price">
-                <span className="detail__price-label">Precio estándar</span>
-                <span className="detail__price-value">{service.price}</span>
-              </div>
+              {service.price && (
+                <div className="detail__price">
+                  <span className="detail__price-label">Precio estándar</span>
+                  <span className="detail__price-value">{service.price}</span>
+                </div>
+              )}
               <div className="detail__price detail__price--custom">
                 <span className="detail__price-label">Personalizado</span>
                 <span className="detail__price-value">{service.customPrice}</span>
