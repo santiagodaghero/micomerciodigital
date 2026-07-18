@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { servicesData } from '../components/Services/servicesData'
 import Slider from '../components/Slider/Slider'
 import AnimatedSection from '../components/AnimatedSection/AnimatedSection'
+import ServiceComparison from '../components/ServiceComparison/ServiceComparison'
 import './ServiceDetail.css'
 
 const projectsData = {
@@ -59,40 +60,16 @@ const projectsData = {
   ],
   3: [
     {
-      name: 'Dashboard - TechStore',
-      image: '📊',
+      name: 'Dashboard Ventas Power BI',
+      image: `${import.meta.env.BASE_URL}mockup/Dashboard-VENTAS.PNG`,
       description:
-        'Dashboard de ventas con KPIs en tiempo real y exportación a PDF.',
+        'Análisis completo de ventas de una tienda de informática; rentabilidad, comparativas anuales y ranking de vendedores.',
     },
     {
-      name: 'Dashboard - Clínica Salud',
-      image: '🏥',
+      name: 'Dashboard RRHH Power BI',
+      image: `${import.meta.env.BASE_URL}mockup/Dashboard-RRHH.PNG`,
       description:
-        'Panel de indicadores clínicos con métricas de pacientes y turnos.',
-    },
-    {
-      name: 'Dashboard - LogiTrack',
-      image: '🚚',
-      description:
-        'Dashboard logístico con tracking de envíos, rutas y rendimiento.',
-    },
-    {
-      name: 'Dashboard - FinMarket',
-      image: '📈',
-      description:
-        'Panel financiero con cotizaciones, histórico y alertas personalizadas.',
-    },
-    {
-      name: 'Dashboard - EduStats',
-      image: '🎓',
-      description:
-        'Dashboard educativo con rendimiento por alumno, curso y período.',
-    },
-    {
-      name: 'Dashboard - RestoView',
-      image: '🍽️',
-      description:
-        'Panel para restaurante con ventas diarias, platos top y rotación de mesas.',
+        'Construido sobre una base de datos SQLite con datos históricos, medidas en DAX y diseño visual con navegación lateral con siete módulos.',
     },
   ],
   4: [
@@ -112,6 +89,160 @@ const projectsData = {
     },
   ],
 }
+
+const comparisonData = [
+  {
+    feature: 'Diseño base',
+    standard: 'Uso mi template propio',
+    custom: 'Diseño el sitio desde cero',
+  },
+  {
+    feature: 'Secciones',
+    standard: 'Incluyo hasta 5 predefinidas',
+    custom: 'Sumo las que necesites, sin límite',
+  },
+  {
+    feature: 'Paleta de colores',
+    standard: 'Propongo 3-4 opciones preseteadas',
+    custom: 'Analizo tu marca y creo una paleta a medida',
+  },
+  {
+    feature: 'Íconos e ilustraciones',
+    standard: 'Uso mi set genérico de íconos',
+    custom: 'Diseño o rediseño íconos propios para vos',
+  },
+  {
+    feature: 'Identidad visual',
+    standard: 'No incluido',
+    custom: 'Desarrollo tu identidad visual completa',
+  },
+  {
+    feature: 'Textos',
+    standard: 'El cliente pasa el contenido',
+    custom: 'Textos a medida',
+  },
+  {
+    feature: 'SEO básico',
+    standard: 'Incluyo meta tags y alt en imágenes',
+    custom: 'Optimización SEO avanzada',
+  },
+  {
+    feature: 'Responsive (mobile/desktop)',
+    standard: 'Lo entrego responsive',
+    custom: 'Lo entrego responsive',
+  },
+  {
+    feature: 'Formulario de contacto / WhatsApp',
+    standard: 'Incluido',
+    custom: 'Incluido + integraciones (CRM, mailing)',
+  },
+  {
+    feature: 'Revisiones post-entrega',
+    standard: '1 revisión',
+    custom: '3 revisiones',
+  },
+  {
+    feature: 'Soporte y ajustes finales',
+    standard: 'No incluido',
+    custom: 'Te doy soporte y ajustes finales',
+  },
+  {
+    feature: 'Entrega',
+    standard: '5-7 días hábiles',
+    custom: '7-15 días hábiles',
+  },
+]
+
+const ecommerceComparisonData = [
+  {
+    feature: 'Catálogo de productos',
+    standard: 'Hasta 20 productos',
+    custom: 'Cantidad de productos que necesites, sin límite',
+  },
+  {
+    feature: 'Carrito y checkout',
+    standard: 'Uso mi flujo de compra estándar',
+    custom: 'Diseño el flujo de compra a tu medida',
+  },
+  {
+    feature: 'Medios de pago',
+    standard: 'Integro 1 pasarela (ej. Mercado Pago)',
+    custom: 'Integro 1 pasarela (ej. Mercado Pago)',
+  },
+  {
+    feature: 'Gestión de stock',
+    standard: 'Te doy gestión manual básica',
+    custom: 'Stock con alertas',
+  },
+  {
+    feature: 'Envíos',
+    standard: 'Calculo un costo fijo o por zona',
+    custom: 'Integro tu cálculo con correo/logística',
+  },
+  {
+    feature: 'Diseño e identidad visual',
+    standard: 'Uso mi template',
+    custom: 'Diseño tu identidad a medida',
+  },
+  {
+    feature: 'Panel de administración',
+    standard: 'Te doy un panel básico',
+    custom: 'Te sumo reportes y estadísticas de ventas',
+  },
+  {
+    feature: 'Revisiones',
+    standard: 'Incluyo 1 revisión',
+    custom: 'Incluyo 3 revisiones',
+  },
+  {
+    feature: 'Entrega',
+    standard: '10-15 días hábiles',
+    custom: '15-25 días hábiles',
+  },
+]
+
+const powerBiComparisonData = [
+  {
+    feature: 'Fuentes de datos',
+    standard: 'Conecto 1 fuente (Excel/Sheets/CSV)',
+    custom: 'Conecto múltiples fuentes (bases, APIs, ERP)',
+  },
+  {
+    feature: 'Páginas del dashboard',
+    standard: 'Una sola página',
+    custom: 'Armo páginas con sistema de navegación lateral con varios módulos',
+  },
+  {
+    feature: 'Medidas DAX',
+    standard: 'Medidas básicas predefinidas',
+    custom: 'Calculo medidas DAX a medida de tu negocio',
+  },
+  {
+    feature: 'Diseño visual',
+    standard: 'Uso un template de colores',
+    custom: 'Adapto el diseño a tu identidad visual',
+  },
+  {
+    feature: 'Actualización de datos',
+    standard: 'La hacés vos, manualmente de manera sencilla',
+    custom: 'La hacés vos, manualmente de manera sencilla',
+  },
+  {
+    feature: 'Capacitación',
+    standard: 'No incluida',
+    custom: 'Te doy una sesión de capacitación de uso',
+  },
+  {
+    feature: 'Revisiones',
+    standard: 'Incluyo 1 revisión',
+    custom: 'Incluyo 3 revisiones',
+  },
+  {
+    feature: 'Entrega',
+    standard: '5-7 días hábiles',
+    custom: '10-15 días hábiles',
+  },
+]
 
 export default function ServiceDetail() {
   const { id } = useParams()
@@ -203,6 +334,40 @@ export default function ServiceDetail() {
                 </div>
               ))}
             </Slider>
+          </section>
+        )}
+
+        {(service.id === 1 || service.id === 2) && (
+          <ServiceComparison rows={comparisonData} />
+        )}
+
+        {service.id === 3 && (
+          <ServiceComparison rows={powerBiComparisonData} />
+        )}
+
+        {service.id === 4 && (
+          <ServiceComparison rows={ecommerceComparisonData} />
+        )}
+
+        {service.id === 5 && (
+          <section className="svc-comparison">
+            <h3 className="svc-comparison__title">¿Producto Estándar o Personalizado?</h3>
+            <div className="svc-comparison__text">
+              <p>
+                Este producto lo pensamos distinto porque, en la práctica, es un desarrollo a medida por naturaleza. Login, empleados, asistencia, sueldos, proyectos y stock son módulos que dependen de la lógica propia de cada empresa, así que ofrecer una versión "estándar" sería poco honesto de nuestra parte: prácticamente ningún cliente podría usarlo tal cual sale de fábrica.
+              </p>
+              <p>
+                Por eso, en vez de vender estándar o personalizado, armamos un paquete por módulos:
+              </p>
+              <ul>
+                <li><strong>Base (login + empleados + asistencia):</strong> el núcleo del sistema, incluido siempre.</li>
+                <li><strong>Módulos adicionales (sueldos, proyectos, stock):</strong> se cotizan aparte y los vas sumando según lo que tu empresa necesite.</li>
+                <li><strong>Personalización de lógica (reglas de sueldo, permisos por rol, reportes específicos):</strong> se cotiza aparte en cualquier paquete que elijas.</li>
+              </ul>
+              <p>
+                El costo final se define en base a los módulos que elijas y el nivel de personalización que necesite tu empresa, cotizándose de forma conjunta antes de comenzar el desarrollo.
+              </p>
+            </div>
           </section>
         )}
       </main>

@@ -13,64 +13,26 @@ export default function ComparisonTable() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <div className="comparison__table-wrapper">
-            <table className="comparison__table">
-              <thead>
-                <tr>
-                  <th className="comparison__th comparison__th--feature">Característica</th>
-                  <th className="comparison__th comparison__th--standard">Producto Estándar</th>
-                  <th className="comparison__th comparison__th--custom">Producto Personalizado</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="comparison__td comparison__td--feature">Diseño base incluido</td>
-                  <td className="comparison__td comparison__td--check">✓</td>
-                  <td className="comparison__td comparison__td--check">✓</td>
-                </tr>
-                <tr>
-                  <td className="comparison__td comparison__td--feature">Secciones predefinidas</td>
-                  <td className="comparison__td">Hasta 5 secciones</td>
-                  <td className="comparison__td">Ilimitadas</td>
-                </tr>
-                <tr>
-                  <td className="comparison__td comparison__td--feature">Análisis de paleta de colores</td>
-                  <td className="comparison__td comparison__td--cross">—</td>
-                  <td className="comparison__td comparison__td--check">✓</td>
-                </tr>
-                <tr>
-                  <td className="comparison__td comparison__td--feature">Diseño y rediseño de íconos</td>
-                  <td className="comparison__td comparison__td--cross">—</td>
-                  <td className="comparison__td comparison__td--check">✓</td>
-                </tr>
-                <tr>
-                  <td className="comparison__td comparison__td--feature">Diseño visual personalizado</td>
-                  <td className="comparison__td comparison__td--cross">—</td>
-                  <td className="comparison__td comparison__td--check">✓</td>
-                </tr>
-                <tr>
-                  <td className="comparison__td comparison__td--feature">Contenido y textos a medida</td>
-                  <td className="comparison__td comparison__td--cross">—</td>
-                  <td className="comparison__td comparison__td--check">✓</td>
-                </tr>
-                <tr>
-                  <td className="comparison__td comparison__td--feature">Revisiones post-entrega</td>
-                  <td className="comparison__td">1 revisión</td>
-                  <td className="comparison__td">3 revisiones</td>
-                </tr>
-                <tr>
-                  <td className="comparison__td comparison__td--feature">Soporte y ajustes finales</td>
-                  <td className="comparison__td comparison__td--cross">—</td>
-                  <td className="comparison__td comparison__td--check">✓</td>
-                </tr>
-                <tr>
-                  <td className="comparison__td comparison__td--feature">Tiempo de entrega</td>
-                  <td className="comparison__td">5-7 días hábiles</td>
-                  <td className="comparison__td">7-12 días hábiles</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="comparison__grid">
+            <div className="comparison__card comparison__card--standard">
+              <h3 className="comparison__card-title">Producto Estándar</h3>
+              <p className="comparison__card-text">
+                Partimos de uno de nuestros modelos de muestra ya diseñados y probados, adaptándolo a tu contenido, tus colores y pequeños ajustes visuales para lograr un resultado prolijo y profesional. Los cambios están limitados a lo que el modelo permite —no incluye diseño desde cero ni desarrollos extra—, pero mantiene una calidad sólida, funcional y con una entrega más rápida. Es la opción ideal si buscás resultados concretos sin necesidad de personalizaciones profundas.
+              </p>
+            </div>
+            <div className="comparison__card comparison__card--custom">
+              <h3 className="comparison__card-title">Producto Personalizado</h3>
+              <p className="comparison__card-text">
+                Dejamos de lado los modelos de muestra y diseñamos tu proyecto desde cero, pensando en tu marca, tu público y tus objetivos particulares. Trabajamos tu identidad visual, la estructura y las funcionalidades sin límites de secciones, productos o páginas, e incluimos más revisiones y soporte posterior a la entrega para ajustar cada detalle. Es la opción indicada si buscás que tu proyecto sea único y represente al 100% lo que tu negocio necesita.
+              </p>
+            </div>
           </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.3}>
+          <p className="comparison__note">
+            Dentro de cada uno de nuestros servicios podés encontrar el detalle de lo que incluye un producto estándar y un producto personalizado, para que elijas la opción que mejor se adapte a tus necesidades.
+          </p>
         </AnimatedSection>
       </div>
     </section>
