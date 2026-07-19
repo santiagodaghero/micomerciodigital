@@ -74,6 +74,16 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: 1.5rem;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.svc-comparison__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.svc-comparison__cards--mobile {
+  display: none;
 }
 
 .svc-comparison__table {
@@ -146,13 +156,28 @@
     font-size: 1.25rem;
   }
 
+  .svc-comparison__table-wrapper {
+    margin: 0 -1rem;
+    border-radius: 0;
+    padding: 1rem;
+  }
+
   .svc-comparison__th {
     font-size: 0.7rem;
-    padding: 0.65rem 0.7rem;
+    padding: 0.65rem 0.6rem;
   }
 
   .svc-comparison__td {
-    font-size: 0.78rem;
-    padding: 0.55rem 0.7rem;
+    font-size: 0.75rem;
+    padding: 0.55rem 0.6rem;
+  }
+
+  .svc-comparison__text {
+    padding: 1.2rem;
+  }
+
+  .svc-comparison__text p,
+  .svc-comparison__text li {
+    font-size: 0.85rem;
   }
 }
