@@ -72,9 +72,7 @@
   background: var(--bg);
   border-radius: var(--radius);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 1.5rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  padding: 1.25rem;
 }
 
 .svc-comparison__table {
@@ -92,8 +90,8 @@
 }
 
 .svc-comparison__th {
-  padding: 0.85rem 1rem;
-  font-size: 0.8rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -104,24 +102,24 @@
   background: #f1f5f9;
   color: var(--text);
   text-align: left;
-  width: 35%;
+  width: 28%;
 }
 
 .svc-comparison__th--standard {
   background: #e2e8f0;
   color: var(--text);
-  width: 32.5%;
+  width: 36%;
 }
 
 .svc-comparison__th--custom {
   background: linear-gradient(135deg, #03CB7D, #0ea5e9);
   color: white;
-  width: 32.5%;
+  width: 36%;
 }
 
 .svc-comparison__td {
-  padding: 0.7rem 1rem;
-  font-size: 0.85rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-light);
   border-bottom: 1px solid var(--border);
   text-align: center;
@@ -163,13 +161,13 @@
   }
 
   .svc-comparison__th {
-    font-size: 0.7rem;
-    padding: 0.65rem 0.6rem;
+    font-size: 0.65rem;
+    padding: 0.55rem 0.5rem;
   }
 
   .svc-comparison__td {
-    font-size: 0.75rem;
-    padding: 0.55rem 0.6rem;
+    font-size: 0.7rem;
+    padding: 0.45rem 0.5rem;
   }
 
   .svc-comparison__text {
