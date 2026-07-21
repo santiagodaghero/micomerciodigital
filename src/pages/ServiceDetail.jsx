@@ -12,50 +12,58 @@ const projectsData = {
       image: `${import.meta.env.BASE_URL}mockup/Portfolio-uiux.PNG`,
       description:
         'Portfolio minimalista para diseñadora UX/UI con galería donde muestra sus trabajos destacados.',
+      url: 'https://diseniador-uiux.vercel.app/',
     },
     {
       name: 'Portfolio - Fotográfico',
       image: `${import.meta.env.BASE_URL}mockup/Portfolio-Fotografia.PNG`,
       description:
         'Portfolio de fotografía para mostrar proyectos y trabajos, integración de redes sociales y tienda para venta de fotografías.',
+      url: 'https://fotografo-blush.vercel.app/',
     },
     {
       name: 'Portfolio - Interiorismo',
       image: `${import.meta.env.BASE_URL}mockup/Portfolio-Interiorismo.PNG`,
       description:
         'Portfolio de interiorismo y paisajismo donde muestra proyectos de espacios residenciales y comerciales, combinando materiales, texturas y vegetación.',
+      url: 'https://interiorismo-mu.vercel.app/',
     },
   ],
   2: [
     {
-      name: 'Servicios para Estudios Profesionales',
+      name: 'Estudios Profesionales',
       image: `${import.meta.env.BASE_URL}mockup/Estudio-Profesional.PNG`,
       description:
         'Sitio ideal para servicios profesionales: contables, abogacía, gestorías y consultorías.',
+      url: 'https://estudio-profesional-two.vercel.app/',
     },
     {
       name: 'Estudio de Arquitectura',
       image: `${import.meta.env.BASE_URL}mockup/LandingPage-Arquitectura.PNG`,
       description:
         'Landing para estudio de arquitectos donde muestra sus proyectos, ideas y equipo de trabajo.',
+      url: 'https://arquitectura-lac.vercel.app/',
     },
     {
       name: 'Estética',
       image: `${import.meta.env.BASE_URL}mockup/LandingPage-Estetica.PNG`,
       description:
         'Cuidado integral con una amplia gama de tratamientos estéticos y de bienestar.',
+      url: 'https://estetica-seven-gamma.vercel.app/',
     },
     {
       name: 'Restaurante',
       image: `${import.meta.env.BASE_URL}mockup/LandingPage-restaurante.PNG`,
       description:
         'Página de restaurante con carta, menú destacado y sistema de reservas.',
+      url: 'https://restaurante-alpha-rouge.vercel.app/',
     },
     {
       name: 'Inmobiliaria',
       image: `${import.meta.env.BASE_URL}mockup/LandingPage-Inmobiliaria.PNG`,
       description:
         'Sitio web para encontrar las mejores propiedades, con búsqueda por ubicación, precio y características.',
+      url: 'https://inmobiliaria-kappa-ivory.vercel.app/',
     },
   ],
   3: [
