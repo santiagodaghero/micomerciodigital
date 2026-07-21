@@ -144,6 +144,14 @@
   border-bottom: none;
 }
 
+.svc-check {
+  width: 16px;
+  height: 16px;
+  color: #16a34a;
+  vertical-align: -2px;
+  margin-right: 2px;
+}
+
 @media (max-width: 768px) {
   .svc-comparison {
     margin-top: 2rem;
