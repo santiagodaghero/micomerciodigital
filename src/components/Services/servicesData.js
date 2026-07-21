@@ -14,7 +14,7 @@ export const servicesData = [
       'Optimización SEO básica',
     ],
     price: 'ARS $300,000',
-    customPrice: 'ARS $450,000',
+    customPrice: 'ARS $480,000',
   },
   {
     id: 2,
