@@ -177,7 +177,7 @@ const portfolioComparisonData = [
   {
     feature: 'Pequeño e-commerce',
     standard: 'No incluido',
-    custom: 'Incluido',
+    custom: '✅ Incluido',
   },
 ]
 
