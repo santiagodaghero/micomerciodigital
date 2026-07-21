@@ -1,10 +1,12 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import './Slider.css'
 
-export default function Slider({ children, visibleCount = 3, autoPlay = false, autoPlayInterval = 3000 }) {
+export default function Slider({ children, visibleCount = 3, autoPlay = false, autoPlayInterval = 3000, loop = false }) {
   const total = children.length
   const [current, setCurrent] = useState(0)
   const [screenVisible, setScreenVisible] = useState(visibleCount)
+  const [isResetting, setIsResetting] = useState(false)
+  const trackRef = useRef(null)
 
   useEffect(() => {
     const getVisible = () => {
@@ -35,8 +37,12 @@ export default function Slider({ children, visibleCount = 3, autoPlay = false, a
   }, [maxIndex, current])
 
   const goNext = useCallback(() => {
-    setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1))
-  }, [maxIndex])
+    if (loop) {
+      setCurrent((prev) => prev + 1)
+    } else {
+      setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1))
+    }
+  }, [loop, maxIndex])
 
   const goPrev = () => setCurrent((prev) => Math.max(prev - 1, 0))
 
@@ -46,16 +52,38 @@ export default function Slider({ children, visibleCount = 3, autoPlay = false, a
     return () => clearInterval(id)
   }, [autoPlay, autoPlayInterval, goNext, total, screenVisible])
 
+  useEffect(() => {
+    if (!loop || total <= screenVisible) return
+    if (current > maxIndex) {
+      const timer = setTimeout(() => {
+        setIsResetting(true)
+        setCurrent(0)
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setIsResetting(false)
+          })
+        })
+      }, 400)
+      return () => clearTimeout(timer)
+    }
+  }, [current, maxIndex, loop, screenVisible, total])
+
   if (total <= screenVisible) {
     return <div className="slider__grid">{children}</div>
   }
+
+  const slides = loop ? [...children, ...children.slice(0, screenVisible)] : children
+  const trackWidth = loop
+    ? `${((total + screenVisible) / screenVisible) * 100}%`
+    : `${(total / screenVisible) * 100}%`
+  const trackTransform = `translateX(-${current * (100 / (loop ? total + screenVisible : total))}%)`
 
   return (
     <div className="slider">
       <button
         className="slider__btn slider__btn--prev"
         onClick={goPrev}
-        disabled={current === 0}
+        disabled={!loop && current === 0}
         aria-label="Anterior"
       >
         ‹
@@ -63,17 +91,18 @@ export default function Slider({ children, visibleCount = 3, autoPlay = false, a
 
       <div className="slider__viewport">
         <div
-          className="slider__track"
+          ref={trackRef}
+          className={`slider__track ${isResetting ? 'slider__track--no-transition' : ''}`}
           style={{
-            transform: `translateX(-${current * (100 / total)}%)`,
-            width: `${(total / screenVisible) * 100}%`,
+            transform: trackTransform,
+            width: trackWidth,
           }}
         >
-          {children.map((child, i) => (
+          {slides.map((child, i) => (
             <div
               key={i}
               className="slider__slide"
-              style={{ width: `${100 / total}%` }}
+              style={{ width: `${100 / (loop ? total + screenVisible : total)}%` }}
             >
               {child}
             </div>
@@ -84,22 +113,23 @@ export default function Slider({ children, visibleCount = 3, autoPlay = false, a
       <button
         className="slider__btn slider__btn--next"
         onClick={goNext}
-        disabled={current === maxIndex}
         aria-label="Siguiente"
       >
         ›
       </button>
 
-      <div className="slider__dots">
-        {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-          <button
-            key={i}
-            className={`slider__dot ${i === current ? 'slider__dot--active' : ''}`}
-            onClick={() => setCurrent(i)}
-            aria-label={`Ir a diapositiva ${i + 1}`}
-          />
-        ))}
-      </div>
+      {!loop && (
+        <div className="slider__dots">
+          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+            <button
+              key={i}
+              className={`slider__dot ${i === current ? 'slider__dot--active' : ''}`}
+              onClick={() => setCurrent(i)}
+              aria-label={`Ir a diapositiva ${i + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

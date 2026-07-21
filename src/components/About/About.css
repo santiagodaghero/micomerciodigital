@@ -126,6 +126,10 @@
     display: none;
   }
 
+  .about__grid .slider__slide {
+    padding: 0;
+  }
+
   .about__grid .slider__grid {
     grid-template-columns: 1fr;
     gap: 1rem;

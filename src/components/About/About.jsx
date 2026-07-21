@@ -48,7 +48,7 @@ export default function About() {
           </p>
 
           <div className="about__grid">
-            <Slider visibleCount={4} autoPlay>
+            <Slider visibleCount={4} autoPlay loop>
               {cards.map((card) => (
                 <div key={card.title} className="about__card">
                   <div className="about__card-icon">
