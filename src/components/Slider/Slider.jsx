@@ -5,8 +5,8 @@ export default function Slider({ children, visibleCount = 3, autoPlay = false, a
   const total = children.length
   const [current, setCurrent] = useState(0)
   const [screenVisible, setScreenVisible] = useState(visibleCount)
-  const [isResetting, setIsResetting] = useState(false)
-  const trackRef = useRef(null)
+  const [noTransition, setNoTransition] = useState(false)
+  const resetTimer = useRef(null)
 
   useEffect(() => {
     const getVisible = () => {
@@ -30,11 +30,12 @@ export default function Slider({ children, visibleCount = 3, autoPlay = false, a
     return () => window.removeEventListener('resize', handler)
   }, [visibleCount])
 
+  const slidesCount = loop ? total + screenVisible : total
   const maxIndex = Math.max(0, total - screenVisible)
 
   useEffect(() => {
-    if (current > maxIndex) setCurrent(maxIndex)
-  }, [maxIndex, current])
+    if (!loop && current > maxIndex) setCurrent(maxIndex)
+  }, [maxIndex, current, loop])
 
   const goNext = useCallback(() => {
     if (loop) {
@@ -54,29 +55,24 @@ export default function Slider({ children, visibleCount = 3, autoPlay = false, a
 
   useEffect(() => {
     if (!loop || total <= screenVisible) return
-    if (current > maxIndex) {
-      const timer = setTimeout(() => {
-        setIsResetting(true)
+    if (current >= total) {
+      resetTimer.current = setTimeout(() => {
+        setNoTransition(true)
         setCurrent(0)
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            setIsResetting(false)
-          })
-        })
+        setTimeout(() => setNoTransition(false), 50)
       }, 400)
-      return () => clearTimeout(timer)
+      return () => clearTimeout(resetTimer.current)
     }
-  }, [current, maxIndex, loop, screenVisible, total])
+  }, [current, loop, screenVisible, total])
 
   if (total <= screenVisible) {
     return <div className="slider__grid">{children}</div>
   }
 
   const slides = loop ? [...children, ...children.slice(0, screenVisible)] : children
-  const trackWidth = loop
-    ? `${((total + screenVisible) / screenVisible) * 100}%`
-    : `${(total / screenVisible) * 100}%`
-  const trackTransform = `translateX(-${current * (100 / (loop ? total + screenVisible : total))}%)`
+  const trackWidth = `${(slidesCount / screenVisible) * 100}%`
+  const slideWidth = `${100 / slidesCount}%`
+  const trackTransform = `translateX(-${current * (100 / slidesCount)}%)`
 
   return (
     <div className="slider">
@@ -91,19 +87,14 @@ export default function Slider({ children, visibleCount = 3, autoPlay = false, a
 
       <div className="slider__viewport">
         <div
-          ref={trackRef}
-          className={`slider__track ${isResetting ? 'slider__track--no-transition' : ''}`}
+          className={`slider__track ${noTransition ? 'slider__track--no-transition' : ''}`}
           style={{
             transform: trackTransform,
             width: trackWidth,
           }}
         >
           {slides.map((child, i) => (
-            <div
-              key={i}
-              className="slider__slide"
-              style={{ width: `${100 / (loop ? total + screenVisible : total)}%` }}
-            >
+            <div key={i} className="slider__slide" style={{ width: slideWidth }}>
               {child}
             </div>
           ))}
