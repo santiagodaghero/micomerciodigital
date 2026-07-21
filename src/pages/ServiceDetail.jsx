@@ -172,6 +172,15 @@ const comparisonData = [
   },
 ]
 
+const portfolioComparisonData = [
+  ...comparisonData,
+  {
+    feature: 'Pequeño e-commerce',
+    standard: 'No incluido',
+    custom: 'Incluido',
+  },
+]
+
 const ecommerceComparisonData = [
   {
     feature: 'Catálogo de productos',
@@ -363,7 +372,11 @@ export default function ServiceDetail() {
           </section>
         )}
 
-        {(service.id === 1 || service.id === 2) && (
+        {service.id === 1 && (
+          <ServiceComparison rows={portfolioComparisonData} />
+        )}
+
+        {service.id === 2 && (
           <ServiceComparison rows={comparisonData} />
         )}
 
