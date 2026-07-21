@@ -102,48 +102,48 @@ const projectsData = {
 const comparisonData = [
   {
     feature: 'Diseño base',
-    standard: 'Uso mi template propio',
-    custom: 'Diseño el sitio desde cero',
+    standard: 'Plantilla profesional propia',
+    custom: 'Diseño creado desde cero, adaptado a la marca',
   },
   {
     feature: 'Secciones',
-    standard: 'Incluyo hasta 5 predefinidas',
-    custom: 'Sumo las que necesites, sin límite',
+    standard: 'Hasta 5 secciones predefinidas',
+    custom: 'Secciones ilimitadas, según necesidad',
   },
   {
     feature: 'Paleta de colores',
-    standard: 'Propongo 3-4 opciones preseteadas',
-    custom: 'Analizo tu marca y creo una paleta a medida',
+    standard: '3-4 opciones preseteadas',
+    custom: 'Paleta a medida, definida junto al cliente',
   },
   {
     feature: 'Íconos e ilustraciones',
-    standard: 'Uso mi set genérico de íconos',
-    custom: 'Diseño o rediseño íconos propios para vos',
+    standard: 'Set de íconos genéricos',
+    custom: 'Íconos e ilustraciones diseñados a medida',
   },
   {
     feature: 'Identidad visual',
-    standard: 'No incluido',
-    custom: 'Desarrollo tu identidad visual completa',
+    standard: 'No incluida',
+    custom: 'Desarrollo completo de identidad visual',
   },
   {
     feature: 'Textos',
-    standard: 'El cliente pasa el contenido',
-    custom: 'Textos a medida',
+    standard: 'A cargo del cliente',
+    custom: 'Redacción de textos a medida',
   },
   {
-    feature: 'SEO básico',
-    standard: 'Incluyo meta tags y alt en imágenes',
-    custom: 'Optimización SEO avanzada',
+    feature: 'SEO',
+    standard: 'SEO básico (meta tags, alt en imágenes)',
+    custom: 'SEO avanzado (estructura, keywords, optimización de contenido)',
   },
   {
     feature: 'Responsive (mobile/desktop)',
-    standard: 'Lo entrego responsive',
-    custom: 'Lo entrego responsive',
+    standard: '✅ Incluido',
+    custom: '✅ Incluido',
   },
   {
     feature: 'Formulario de contacto / WhatsApp',
-    standard: 'Incluido',
-    custom: 'Incluido + integraciones (CRM, mailing)',
+    standard: '✅ Incluido',
+    custom: '✅ Incluido + integraciones (CRM, mailing)',
   },
   {
     feature: 'Revisiones post-entrega',
@@ -151,14 +151,24 @@ const comparisonData = [
     custom: '3 revisiones',
   },
   {
-    feature: 'Soporte y ajustes finales',
+    feature: 'Soporte post-entrega',
     standard: 'No incluido',
-    custom: 'Te doy soporte y ajustes finales',
+    custom: 'Incluido, con ajustes finales (hasta 15 días de entregado)',
   },
   {
-    feature: 'Entrega',
+    feature: 'Tiempo de entrega',
     standard: '5-7 días hábiles',
     custom: '7-15 días hábiles',
+  },
+  {
+    feature: 'Dominio',
+    standard: 'Incluido el 1er año (USD 12)',
+    custom: 'Incluido el 1er año (USD 12)',
+  },
+  {
+    feature: 'Ideal para',
+    standard: 'Emprendimientos que buscan salir rápido y con presupuesto ajustado',
+    custom: 'Marcas que buscan una presencia diferenciada y a medida',
   },
 ]
 
