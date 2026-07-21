@@ -16,15 +16,30 @@ export default function ComparisonTable() {
           <div className="comparison__grid">
             <div className="comparison__card comparison__card--standard">
               <h3 className="comparison__card-title">Producto Estándar</h3>
-              <p className="comparison__card-text">
-                Partimos de uno de nuestros modelos de muestra ya diseñados y probados, adaptándolo a tu contenido, tus colores y pequeños ajustes visuales para lograr un resultado prolijo y profesional. Los cambios están limitados a lo que el modelo permite —no incluye diseño desde cero ni desarrollos extra—, pero mantiene una calidad sólida, funcional y con una entrega más rápida. Es la opción ideal si buscás resultados concretos sin necesidad de personalizaciones profundas.
-              </p>
+              <ul className="comparison__card-list">
+                <li>Basado en un modelo ya diseñado y probado</li>
+                <li>Adaptamos tu contenido y ajustes visuales a un modelo estandarizado</li>
+                <li>Cambios limitados al modelo (sin diseño desde cero)</li>
+                <li>Cantidad de secciones limitada según el modelo elegido</li>
+                <li>Calidad sólida y entrega rápida</li>
+                <li>Iconos estándares, sin modificaciones visuales/colores</li>
+                <li>Responsive básico (adaptado a celular y PC)</li>
+                <li>Ideal para resultados concretos, sin personalización profunda</li>
+                <li>Menor cantidad de cambios post-entrega</li>
+              </ul>
             </div>
             <div className="comparison__card comparison__card--custom">
               <h3 className="comparison__card-title">Producto Personalizado</h3>
-              <p className="comparison__card-text">
-                Dejamos de lado los modelos de muestra y diseñamos tu proyecto desde cero, pensando en tu marca, tu público y tus objetivos particulares. Trabajamos tu identidad visual, la estructura y las funcionalidades sin límites de secciones, productos o páginas, e incluimos más revisiones y soporte posterior a la entrega para ajustar cada detalle. Es la opción indicada si buscás que tu proyecto sea único y represente al 100% lo que tu negocio necesita.
-              </p>
+              <ul className="comparison__card-list">
+                <li>Diseño desde cero, a medida de tu marca</li>
+                <li>Identidad visual, estructura y funcionalidades sin límites</li>
+                <li>Animaciones al pasar de secciones</li>
+                <li>Iconos y gráficos a medida</li>
+                <li>Trabajo más exhaustivo en adaptabilidad responsive (mobile, tablet y PC)</li>
+                <li>Optimización de velocidad y SEO</li>
+                <li>Más revisiones y soporte post-entrega</li>
+                <li>Ideal si buscás un proyecto único al 100%</li>
+              </ul>
             </div>
           </div>
         </AnimatedSection>
