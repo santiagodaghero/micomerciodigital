@@ -216,6 +216,21 @@
   padding: 0.5rem;
 }
 
+.project-card__link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.project-card__link:hover {
+  color: var(--water);
+  text-decoration: underline;
+}
+
 .detail-error {
   display: flex;
   flex-direction: column;

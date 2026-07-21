@@ -78,6 +78,7 @@ const projectsData = {
       image: `${import.meta.env.BASE_URL}mockup/E-comerce.png`,
       description:
         'Tienda online de alimentos saludables con catálogo de productos, filtros dietéticos y pedidos a domicilio.',
+      url: 'https://e-commerce-dietetica.vercel.app/',
     },
   ],
   5: [
@@ -332,6 +333,11 @@ export default function ServiceDetail() {
                   <div className="project-card__body">
                     <h3 className="project-card__title">{project.name}</h3>
                     <p className="project-card__desc">{project.description}</p>
+                    {project.url && (
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-card__link">
+                        Ver proyecto →
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
