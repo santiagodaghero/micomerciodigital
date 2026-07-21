@@ -35,6 +35,7 @@ export default function ServiceCard({ service }) {
           <span className="card__price-value">{service.customPrice}</span>
         </div>
       </div>
+      <span className="card__cta-text">Conocer más →</span>
 
     </Link>
   )

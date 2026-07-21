@@ -133,6 +133,25 @@
   color: #fcd34d;
 }
 
+.card__cta-text {
+  display: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  background: #136AFF;
+  color: white;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  transition: background 0.2s;
+}
+
+.card:hover .card__cta-text {
+  background: #0d5be0;
+}
+
 /* --- CTA SECTION --- */
 .card__cta {
   display: flex;
@@ -194,6 +213,10 @@
 
   .card__price-block--custom .card__price-value {
     font-size: 1rem;
+  }
+
+  .card__cta-text {
+    display: block;
   }
 
   .card__cta {
