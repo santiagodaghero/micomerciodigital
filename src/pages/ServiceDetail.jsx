@@ -162,8 +162,8 @@ const comparisonData = [
   },
   {
     feature: 'Dominio',
-    standard: 'Incluido el 1er año (USD 12)',
-    custom: 'Incluido el 1er año (USD 12)',
+    standard: '✅ Incluido el 1er año (USD 12)',
+    custom: '✅ Incluido el 1er año (USD 12)',
   },
   {
     feature: 'Ideal para',
