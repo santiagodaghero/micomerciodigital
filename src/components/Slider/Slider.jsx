@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import './Slider.css'
 
-export default function Slider({ children, visibleCount = 3 }) {
+export default function Slider({ children, visibleCount = 3, autoPlay = false, autoPlayInterval = 3000 }) {
   const total = children.length
   const [current, setCurrent] = useState(0)
   const [screenVisible, setScreenVisible] = useState(visibleCount)
@@ -34,8 +34,17 @@ export default function Slider({ children, visibleCount = 3 }) {
     if (current > maxIndex) setCurrent(maxIndex)
   }, [maxIndex, current])
 
-  const goNext = () => setCurrent((prev) => Math.min(prev + 1, maxIndex))
+  const goNext = useCallback(() => {
+    setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1))
+  }, [maxIndex])
+
   const goPrev = () => setCurrent((prev) => Math.max(prev - 1, 0))
+
+  useEffect(() => {
+    if (!autoPlay || total <= screenVisible) return
+    const id = setInterval(goNext, autoPlayInterval)
+    return () => clearInterval(id)
+  }, [autoPlay, autoPlayInterval, goNext, total, screenVisible])
 
   if (total <= screenVisible) {
     return <div className="slider__grid">{children}</div>
