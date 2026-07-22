@@ -17,15 +17,16 @@ export default function ComparisonTable() {
             <div className="comparison__card comparison__card--standard">
               <h3 className="comparison__card-title">Producto Estándar</h3>
               <ul className="comparison__card-list">
-                <li>Basado en un modelo ya diseñado y probado</li>
-                <li>Adaptamos tu contenido y ajustes visuales a un modelo estandarizado</li>
-                <li>Cambios limitados al modelo (sin diseño desde cero)</li>
-                <li>Cantidad de secciones limitada según el modelo elegido</li>
-                <li>Calidad sólida y entrega rápida</li>
-                <li>Iconos estándares, sin modificaciones visuales/colores</li>
-                <li>Responsive básico (adaptado a celular y PC)</li>
-                <li>Ideal para resultados concretos, sin personalización profunda</li>
-                <li>Menor cantidad de cambios post-entrega</li>
+                <li>Basado en un modelo ya diseñado y probado, adaptado a cada proyecto</li>
+                <li>Contenido y ajustes visuales aplicados sobre una estructura estandarizada</li>
+                <li>Cantidad de secciones y funcionalidades limitada según el modelo elegido</li>
+                <li>Paleta de colores e íconos predefinidos, sin diseño a medida</li>
+                <li>Responsive básico, adaptado a celular y PC</li>
+                <li>SEO básico incluido</li>
+                <li>Dominio incluido durante el primer año</li>
+                <li>1 revisión post-entrega</li>
+                <li>Entrega rápida, con calidad sólida y resultados concretos</li>
+                <li>Ideal para quienes buscan una presencia profesional online sin necesidad de personalización profunda</li>
               </ul>
             </div>
             <div className="comparison__card comparison__card--custom">
