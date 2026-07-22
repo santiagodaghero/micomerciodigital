@@ -32,14 +32,18 @@ export default function ComparisonTable() {
             <div className="comparison__card comparison__card--custom">
               <h3 className="comparison__card-title">Producto Personalizado</h3>
               <ul className="comparison__card-list">
-                <li>Diseño desde cero, a medida de tu marca</li>
+                <li>Reunión de research previo (marca, público objetivo y objetivos del proyecto)</li>
+                <li>Diseño desarrollado desde cero, a medida de la marca</li>
                 <li>Identidad visual, estructura y funcionalidades sin límites</li>
-                <li>Animaciones al pasar de secciones</li>
-                <li>Iconos y gráficos a medida</li>
-                <li>Trabajo más exhaustivo en adaptabilidad responsive (mobile, tablet y PC)</li>
-                <li>Optimización de velocidad y SEO</li>
-                <li>Más revisiones y soporte post-entrega</li>
-                <li>Ideal si buscás un proyecto único al 100%</li>
+                <li>Paleta de colores, íconos y gráficos diseñados especialmente para el proyecto</li>
+                <li>Animaciones al pasar de secciones (en páginas web)</li>
+                <li>Responsive avanzado, optimizado para mobile, tablet y PC</li>
+                <li>SEO avanzado, con optimización de estructura y contenido</li>
+                <li>Optimización de velocidad de carga</li>
+                <li>Dominio incluido durante el primer año</li>
+                <li>3 revisiones post-entrega</li>
+                <li>Acompañamiento y soporte post-entrega por 15 días</li>
+                <li>Ideal para marcas que buscan un proyecto único, con una presencia diferenciada y a medida</li>
               </ul>
             </div>
           </div>
