@@ -56,6 +56,19 @@
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
+.contact__form-group.has-error input,
+.contact__form-group.has-error textarea,
+.contact__form-group.has-error select {
+  border-color: #e53e3e;
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+.contact__optional {
+  font-weight: 400;
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+
 .contact__btns {
   display: flex;
   gap: 1rem;
