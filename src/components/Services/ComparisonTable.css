@@ -124,8 +124,6 @@
   .comparison__slider {
     position: relative;
     overflow: hidden;
-    max-width: 420px;
-    margin: 0 auto;
   }
 
   .comparison__slider-track {
@@ -137,6 +135,7 @@
     min-width: 100%;
     flex-shrink: 0;
     box-sizing: border-box;
+    width: 100%;
   }
 
   .comparison__arrow {
@@ -150,7 +149,6 @@
     background: var(--bg);
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     color: var(--text);
-    font-size: 0.85rem;
     cursor: pointer;
     z-index: 2;
     display: flex;
@@ -164,8 +162,8 @@
     color: #fff;
   }
 
-  .comparison__arrow--left { left: -4px; }
-  .comparison__arrow--right { right: -4px; }
+  .comparison__arrow--left { left: 4px; }
+  .comparison__arrow--right { right: 4px; }
 
   .comparison__dots {
     display: flex;
