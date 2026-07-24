@@ -59,7 +59,7 @@ export default function Contact() {
             </div>
             <div className="contact__form-group">
               <label htmlFor="message">Mensaje</label>
-              <textarea id="message" name="message" required rows={5} placeholder="Contanos de tu proyecto..." />
+              <textarea id="message" name="message" rows={5} placeholder="Contanos de tu proyecto..." />
             </div>
             <div className="contact__btns">
               <button type="button" className="contact__btn contact__btn--email" onClick={handleSubmit}>
