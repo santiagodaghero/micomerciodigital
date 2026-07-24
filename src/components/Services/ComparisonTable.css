@@ -123,12 +123,14 @@
 
   .comparison__slider {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .comparison__slider-track {
     display: flex;
     transition: transform 0.35s ease;
+    overflow: hidden;
+    margin: 0 24px;
   }
 
   .comparison__slider-track .comparison__card {
@@ -162,8 +164,8 @@
     color: #fff;
   }
 
-  .comparison__arrow--left { left: 4px; }
-  .comparison__arrow--right { right: 4px; }
+  .comparison__arrow--left { left: 0; }
+  .comparison__arrow--right { right: 0; }
 
   .comparison__dots {
     display: flex;
