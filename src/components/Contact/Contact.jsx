@@ -20,6 +20,17 @@ export default function Contact() {
               <input type="email" id="email" required placeholder="tu@email.com" />
             </div>
             <div className="contact__form-group">
+              <label htmlFor="service">Servicio</label>
+              <select id="service" required defaultValue="">
+                <option value="" disabled>Seleccioná un servicio</option>
+                <option value="portfolio">Portfolio profesional</option>
+                <option value="web">Página web</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="dashboard">Dashboard Power BI</option>
+                <option value="control">Control organizacional</option>
+              </select>
+            </div>
+            <div className="contact__form-group">
               <label htmlFor="message">Mensaje</label>
               <textarea id="message" required rows={5} placeholder="Contanos de tu proyecto..." />
             </div>
