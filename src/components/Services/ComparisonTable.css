@@ -126,11 +126,14 @@
     overflow: visible;
   }
 
+  .comparison__slider-viewport {
+    overflow: hidden;
+    margin: 0 24px;
+  }
+
   .comparison__slider-track {
     display: flex;
     transition: transform 0.35s ease;
-    overflow: hidden;
-    margin: 0 24px;
   }
 
   .comparison__slider-track .comparison__card {
