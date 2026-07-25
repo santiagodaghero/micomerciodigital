@@ -11,6 +11,7 @@ export default function Contact() {
     const newErrors = {}
     if (!fd.get('name')?.trim()) newErrors.name = true
     if (!fd.get('email')?.trim()) newErrors.email = true
+    if (!fd.get('phone')?.trim()) newErrors.phone = true
     if (!fd.get('service')) newErrors.service = true
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -23,11 +24,12 @@ export default function Contact() {
     const fd = new FormData(formRef.current)
     const name = fd.get('name').trim()
     const email = fd.get('email').trim()
+    const phone = fd.get('phone').trim()
     const service = fd.get('service')
     const message = fd.get('message')?.trim() || ''
 
     const subject = encodeURIComponent(`Consulta desde la web - ${service}`)
-    let body = `Hola, me llamo ${name}.\n\nServicio: ${service}`
+    let body = `Hola, me llamo ${name}.\n\nServicio: ${service}\nTeléfono: ${phone}`
     if (message) body += `\n\n${message}`
     body += `\n\nMi email de contacto: ${email}`
     window.location.href = `mailto:info@comerciodigital.com.ar?subject=${subject}&body=${encodeURIComponent(body)}`
@@ -40,10 +42,11 @@ export default function Contact() {
     const fd = new FormData(formRef.current)
     const name = fd.get('name').trim()
     const email = fd.get('email').trim()
+    const phone = fd.get('phone').trim()
     const service = fd.get('service')
     const message = fd.get('message')?.trim() || ''
 
-    let text = `Hola, me llamo ${name}.\nServicio: ${service}`
+    let text = `Hola, me llamo ${name}.\nServicio: ${service}\nTeléfono: ${phone}`
     if (message) text += `\n\n${message}`
     text += `\n\nMi email de contacto: ${email}`
 
@@ -66,6 +69,10 @@ export default function Contact() {
             <div className={`contact__form-group ${errors.email ? 'has-error' : ''}`}>
               <label htmlFor="email">Email</label>
               <input type="email" id="email" name="email" required placeholder="tu@email.com" onChange={() => setErrors(prev => ({ ...prev, email: false }))} />
+            </div>
+            <div className={`contact__form-group ${errors.phone ? 'has-error' : ''}`}>
+              <label htmlFor="phone">Teléfono</label>
+              <input type="tel" id="phone" name="phone" required placeholder="Tu número de teléfono" onChange={() => setErrors(prev => ({ ...prev, phone: false }))} />
             </div>
             <div className={`contact__form-group ${errors.service ? 'has-error' : ''}`}>
               <label htmlFor="service">Servicio</label>
