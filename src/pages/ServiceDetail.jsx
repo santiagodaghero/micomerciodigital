@@ -479,19 +479,6 @@ export default function ServiceDetail() {
                 El costo final se define en base a los módulos que elijas y el nivel de personalización que necesite tu empresa, cotizándose de forma conjunta antes de comenzar el desarrollo.
               </p>
             </div>
-            <button
-              type="button"
-              className="svc-comparison__more"
-              onClick={() =>
-                document.getElementById('svc-proyecto-tarjetas')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }
-              aria-label="Conocé más sobre el proyecto"
-            >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-              <span>Conocé más sobre el proyecto</span>
-            </button>
           </section>
 
           <section id="svc-proyecto-tarjetas" className="svc-project">

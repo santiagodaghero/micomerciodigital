@@ -68,41 +68,6 @@
   color: var(--text);
 }
 
-.svc-comparison__more {
-  margin-top: 2rem;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--water);
-  font-size: 0.9rem;
-  font-weight: 600;
-  animation: svc-more-bounce 2s infinite;
-  padding: 0.5rem 1rem;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.svc-comparison__more:hover {
-  color: var(--water-light);
-  text-decoration: underline;
-}
-
-.svc-comparison__more svg {
-  display: block;
-}
-
-@keyframes svc-more-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
-}
-
 .svc-project {
   margin-top: 3.5rem;
   max-width: 960px;
