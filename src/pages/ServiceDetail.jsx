@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { servicesData } from '../components/Services/servicesData'
 import Slider from '../components/Slider/Slider'
@@ -322,21 +321,6 @@ export default function ServiceDetail() {
   const { id } = useParams()
   const service = servicesData.find((s) => s.id === Number(id))
   const projects = projectsData[Number(id)] || []
-  const [lightbox, setLightbox] = useState(null)
-
-  useEffect(() => {
-    if (!lightbox) return
-    const onKey = (e) => {
-      if (e.key === 'Escape') setLightbox(null)
-    }
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    window.addEventListener('keydown', onKey)
-    return () => {
-      document.body.style.overflow = prevOverflow
-      window.removeEventListener('keydown', onKey)
-    }
-  }, [lightbox])
 
   if (!service) {
     return (
@@ -481,21 +465,6 @@ export default function ServiceDetail() {
             <h3 className="svc-project__title">Así se ve por dentro</h3>
 
             <div className="svc-project__block">
-              <div className="svc-project__media">
-                <button
-                  type="button"
-                  className="svc-project__zoom"
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/control-organizacional/login.png',
-                      alt: 'Pantalla de inicio de sesión',
-                    })
-                  }
-                  aria-label="Ampliar imagen"
-                >
-                  <img src="/images/control-organizacional/login.png" alt="Pantalla de inicio de sesión" loading="lazy" />
-                </button>
-              </div>
               <div className="svc-project__info">
                 <h4>Acceso seguro</h4>
                 <p>
@@ -505,21 +474,6 @@ export default function ServiceDetail() {
             </div>
 
             <div className="svc-project__block">
-              <div className="svc-project__media">
-                <button
-                  type="button"
-                  className="svc-project__zoom"
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/control-organizacional/calendario.png',
-                      alt: 'Calendario de proyectos',
-                    })
-                  }
-                  aria-label="Ampliar imagen"
-                >
-                  <img src="/images/control-organizacional/calendario.png" alt="Calendario de proyectos" loading="lazy" />
-                </button>
-              </div>
               <div className="svc-project__info">
                 <h4>Calendario de proyectos</h4>
                 <p>
@@ -529,21 +483,6 @@ export default function ServiceDetail() {
             </div>
 
             <div className="svc-project__block">
-              <div className="svc-project__media">
-                <button
-                  type="button"
-                  className="svc-project__zoom"
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/control-organizacional/reportes.png',
-                      alt: 'Panel de control con indicadores',
-                    })
-                  }
-                  aria-label="Ampliar imagen"
-                >
-                  <img src="/images/control-organizacional/reportes.png" alt="Panel de control con indicadores" loading="lazy" />
-                </button>
-              </div>
               <div className="svc-project__info">
                 <h4>Reportes y KPIs</h4>
                 <p>
@@ -553,21 +492,6 @@ export default function ServiceDetail() {
             </div>
 
             <div className="svc-project__block">
-              <div className="svc-project__media">
-                <button
-                  type="button"
-                  className="svc-project__zoom"
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/control-organizacional/empleados.png',
-                      alt: 'Listado de empleados',
-                    })
-                  }
-                  aria-label="Ampliar imagen"
-                >
-                  <img src="/images/control-organizacional/empleados.png" alt="Listado de empleados" loading="lazy" />
-                </button>
-              </div>
               <div className="svc-project__info">
                 <h4>Gestión de empleados</h4>
                 <p>
@@ -577,21 +501,6 @@ export default function ServiceDetail() {
             </div>
 
             <div className="svc-project__block">
-              <div className="svc-project__media">
-                <button
-                  type="button"
-                  className="svc-project__zoom"
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/control-organizacional/asistencia.png',
-                      alt: 'Registro de asistencia',
-                    })
-                  }
-                  aria-label="Ampliar imagen"
-                >
-                  <img src="/images/control-organizacional/asistencia.png" alt="Registro de asistencia" loading="lazy" />
-                </button>
-              </div>
               <div className="svc-project__info">
                 <h4>Control de asistencia</h4>
                 <p>
@@ -601,21 +510,6 @@ export default function ServiceDetail() {
             </div>
 
             <div className="svc-project__block">
-              <div className="svc-project__media">
-                <button
-                  type="button"
-                  className="svc-project__zoom"
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/control-organizacional/sueldos.png',
-                      alt: 'Liquidación de sueldos',
-                    })
-                  }
-                  aria-label="Ampliar imagen"
-                >
-                  <img src="/images/control-organizacional/sueldos.png" alt="Liquidación de sueldos" loading="lazy" />
-                </button>
-              </div>
               <div className="svc-project__info">
                 <h4>Sueldos y liquidaciones</h4>
                 <p>
@@ -625,21 +519,6 @@ export default function ServiceDetail() {
             </div>
 
             <div className="svc-project__block">
-              <div className="svc-project__media">
-                <button
-                  type="button"
-                  className="svc-project__zoom"
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/control-organizacional/ganancias.png',
-                      alt: 'Ganancias y finanzas',
-                    })
-                  }
-                  aria-label="Ampliar imagen"
-                >
-                  <img src="/images/control-organizacional/ganancias.png" alt="Ganancias y finanzas" loading="lazy" />
-                </button>
-              </div>
               <div className="svc-project__info">
                 <h4>Ganancias y finanzas</h4>
                 <p>
@@ -649,19 +528,6 @@ export default function ServiceDetail() {
             </div>
 
             <div className="svc-project__block">
-              <div className="svc-project__media">
-                <Slider visibleCount={1}>
-                  <button type="button" className="svc-project__zoom" onClick={() => setLightbox({ src: '/images/control-organizacional/proyecto1.png', alt: 'Proyectos: listado y estados' })} aria-label="Ampliar imagen">
-                    <img src="/images/control-organizacional/proyecto1.png" alt="Proyectos: listado y estados" loading="lazy" />
-                  </button>
-                  <button type="button" className="svc-project__zoom" onClick={() => setLightbox({ src: '/images/control-organizacional/proyecto2.png', alt: 'Proyectos: panel del módulo' })} aria-label="Ampliar imagen">
-                    <img src="/images/control-organizacional/proyecto2.png" alt="Proyectos: panel del módulo" loading="lazy" />
-                  </button>
-                  <button type="button" className="svc-project__zoom" onClick={() => setLightbox({ src: '/images/control-organizacional/proyecto3.png', alt: 'Proyectos: detalle de tareas' })} aria-label="Ampliar imagen">
-                    <img src="/images/control-organizacional/proyecto3.png" alt="Proyectos: detalle de tareas" loading="lazy" />
-                  </button>
-                </Slider>
-              </div>
               <div className="svc-project__info">
                 <h4>Proyectos y tareas</h4>
                 <p>
@@ -671,21 +537,6 @@ export default function ServiceDetail() {
             </div>
 
             <div className="svc-project__block">
-              <div className="svc-project__media">
-                <button
-                  type="button"
-                  className="svc-project__zoom"
-                  onClick={() =>
-                    setLightbox({
-                      src: '/images/control-organizacional/stock.png',
-                      alt: 'Control de stock e inventario',
-                    })
-                  }
-                  aria-label="Ampliar imagen"
-                >
-                  <img src="/images/control-organizacional/stock.png" alt="Control de stock e inventario" loading="lazy" />
-                </button>
-              </div>
               <div className="svc-project__info">
                 <h4>Stock e inventario</h4>
                 <p>
@@ -697,15 +548,6 @@ export default function ServiceDetail() {
           </>
         )}
       </main>
-
-      {lightbox && (
-        <div className="svc-lightbox" onClick={() => setLightbox(null)} role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-          <button type="button" className="svc-lightbox__close" onClick={() => setLightbox(null)} aria-label="Cerrar">
-            ×
-          </button>
-          <img src={lightbox.src} alt={lightbox.alt} onClick={(e) => e.stopPropagation()} />
-        </div>
-      )}
     </div>
   )
 }
