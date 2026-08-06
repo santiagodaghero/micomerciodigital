@@ -499,18 +499,18 @@ export default function ServiceDetail() {
 
             <div className="svc-project__block">
               <div className="svc-project__info">
-                <h4>Acceso seguro</h4>
+                <h4>Acceso y Roles</h4>
                 <p>
-                  Cada empleado entra con su propia cuenta y ve solo lo que le corresponde según su rol. El sistema protege la información sensible de la empresa desde el primer paso.
+                  Sistema de login donde cada empleado ingresa con usuario y contraseña propios. El acceso a las distintas secciones de la aplicación varía según la jerarquía y el rol: jefes de área, encargados o empleados de planta. Así se protege la información sensible de la empresa, mostrando solo lo que corresponde a cada nivel. Garantiza un control de acceso ordenado y seguro.
                 </p>
               </div>
             </div>
 
             <div className="svc-project__block">
               <div className="svc-project__info">
-                <h4>Calendario de proyectos</h4>
+                <h4>Calendario de Proyectos</h4>
                 <p>
-                  El mes completo en una sola vista, con los proyectos marcados día a día y coloreados según su estado: verde si están finalizados, azul si recién inician, rojo si están demorados. Cada evento muestra quién es el responsable, y al tocar un día se abre el detalle con feriados, vacaciones, licencias y presentismo.
+                  Vista mensual que centraliza todos los proyectos activos de la empresa, organizados día a día. Cada proyecto se identifica con un color según su estado: verde para finalizado, azul para iniciado y rojo para retrasado. Permite visualizar de un vistazo el avance general y detectar rápidamente demoras. Facilita el seguimiento sin necesidad de revisar cada proyecto por separado.
                 </p>
               </div>
             </div>
@@ -519,25 +519,25 @@ export default function ServiceDetail() {
               <div className="svc-project__info">
                 <h4>Reportes y KPIs</h4>
                 <p>
-                  El panel de control reúne los indicadores clave de la empresa: ingresos por ventas, costo de mercadería, gastos, sueldos, ganancia neta y margen. Podés filtrar por todo el histórico, este año, este mes o un rango de fechas a medida, y ver la evolución mes a mes en un gráfico.
+                  Muestra la estructura organizacional de la empresa, con acceso a cada área y a los empleados que la integran. Informa la evolución mensual de ganancias, el personal por área, los mejores clientes y los productos más y menos vendidos. Centraliza los indicadores clave para la toma de decisiones. Facilita una visión global del desempeño del negocio.
                 </p>
               </div>
             </div>
 
             <div className="svc-project__block">
               <div className="svc-project__info">
-                <h4>Gestión de empleados</h4>
+                <h4>Gestión de Personal</h4>
                 <p>
-                  Todo el equipo en un listado con búsqueda instantánea por nombre, legajo o DNI. Cada ficha concentra los datos personales, el área y el rol, y desde acá el administrador carga nuevos empleados con un clic.
+                  Módulo con dos apartados: empleados (legajo, nombre, área, puesto, nivel operativo, altas y bajas) y asistencias (presentes, licencias, partes de enfermo). Centraliza la información básica del personal y su control diario. Permite dar de alta y baja empleados según corresponda. Simplifica el seguimiento operativo del equipo.
                 </p>
               </div>
             </div>
 
             <div className="svc-project__block">
               <div className="svc-project__info">
-                <h4>Control de asistencia</h4>
+                <h4>Gestión de Clientes</h4>
                 <p>
-                  El registro del día en números: empleados activos, asistencias de hoy e inasistencias de hoy de un solo vistazo. El historial de marcaciones de cada persona queda guardado y listo para consultar cuando lo necesites.
+                  Módulo de administración de clientes con su base de datos (nombre, CUIT, mail) para un mejor control comercial. Incluye la facturación, con creación de facturas y presupuestos en estados de aprobado y pagado. Centraliza toda la relación comercial con los clientes de la empresa. Facilita el seguimiento de cobranzas y presupuestos pendientes.
                 </p>
               </div>
             </div>
@@ -553,27 +553,27 @@ export default function ServiceDetail() {
 
             <div className="svc-project__block">
               <div className="svc-project__info">
-                <h4>Ganancias y finanzas</h4>
+                <h4>Finanzas</h4>
                 <p>
-                  El resultado real del negocio: ingresos, costo de mercadería vendida, gastos y sueldos, con la ganancia neta y el margen calculados automáticamente. Incluye la evolución mensual de ingresos contra egresos y el detalle por producto, con su utilidad bruta.
+                  Apartado de ganancias con KPIs detallados: ingresos, costo de mercadería vendida, gastos, sueldos, ganancia neta y margen, todo con gráficos. Incluye ventas (a partir de facturas aceptadas) y gastos propios de la empresa. Ofrece una visión financiera completa e integrada del negocio.
                 </p>
               </div>
             </div>
 
             <div className="svc-project__block">
               <div className="svc-project__info">
-                <h4>Proyectos y tareas</h4>
+                <h4>Recursos</h4>
                 <p>
-                  Los indicadores del módulo al toque: proyectos activos, iniciados, en proceso, atrasados y de prioridad alta. Las tarjetas muestran el responsable, el estado, el avance en porcentaje, la prioridad y la fecha estimada de cierre, con filtros por estado para enfocarse en lo que importa.
+                  Apartado que muestra todos los activos de la empresa, con su estado (disponible, activo, en mantenimiento o dado de baja), a quién fue asignado y a qué sucursal pertenece. Incluye además el control de stock, destacando los productos de mayor circulación y con alarmas de stock bajo. Centraliza el seguimiento de bienes y mercadería de la empresa.
                 </p>
               </div>
             </div>
 
             <div className="svc-project__block">
               <div className="svc-project__info">
-                <h4>Stock e inventario</h4>
+                <h4>Mensajería Interna</h4>
                 <p>
-                  Productos, cantidades y valores en un mismo lugar, con alertas de stock bajo y búsqueda por nombre o código. Cada artículo muestra su mínimo, ubicación y valor, y los movimientos de entrada y salida se registran con un clic.
+                  Canal de comunicación interno entre jefes, encargados y empleados en ambos sentidos. Incluye notificaciones automáticas sobre solicitudes de licencia y su estado de aprobación. Facilita la comunicación fluida dentro de la empresa sin depender de herramientas externas. Mantiene informado a cada usuario según su rol.
                 </p>
               </div>
             </div>
