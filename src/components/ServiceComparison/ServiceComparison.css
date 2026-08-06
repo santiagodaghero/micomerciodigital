@@ -70,58 +70,104 @@
 
 .svc-project {
   margin-top: 3.5rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--border);
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(var(--radius) * 1.5);
+  border: 1px solid rgba(13, 148, 136, 0.18);
+  padding: 3rem 2rem 2.5rem;
+  background:
+    repeating-linear-gradient(
+      115deg,
+      transparent 0,
+      transparent 44px,
+      rgba(13, 148, 136, 0.07) 44px,
+      rgba(13, 148, 136, 0.07) 46px,
+      transparent 46px,
+      transparent 96px,
+      rgba(14, 165, 233, 0.06) 96px,
+      rgba(14, 165, 233, 0.06) 98px
+    ),
+    linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 55%, #ecfeff 100%);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
 .svc-project__title {
   grid-column: 1 / -1;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text);
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .svc-project__block {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(13, 148, 136, 0.18);
   border-radius: var(--radius);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 24px rgba(13, 148, 136, 0.1);
   padding: 1.5rem;
-  min-height: 320px;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.svc-project__block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(13, 148, 136, 0.16);
+}
+
+.svc-project__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.14), rgba(14, 165, 233, 0.14));
+  border: 1px solid rgba(13, 148, 136, 0.22);
 }
 
 .svc-project__info h4 {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.35rem;
 }
 
 .svc-project__info p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-light);
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .svc-project {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .svc-project {
     margin-top: 2.5rem;
+    padding: 2rem 1.25rem 1.75rem;
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
   .svc-project__title {
     font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .svc-project__block {
+    min-height: 0;
   }
 
   .svc-project__info h4 {

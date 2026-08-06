@@ -485,83 +485,74 @@ export default function ServiceDetail() {
             <h3 className="svc-project__title">Así se ve por dentro</h3>
 
             <div className="svc-project__block">
+              <div className="svc-project__icon" aria-hidden="true">🔐</div>
               <div className="svc-project__info">
                 <h4>Acceso y Roles</h4>
-                <p>
-                  Sistema de login donde cada empleado ingresa con usuario y contraseña propios. El acceso a las distintas secciones de la aplicación varía según la jerarquía y el rol: jefes de área, encargados o empleados de planta. Así se protege la información sensible de la empresa, mostrando solo lo que corresponde a cada nivel. Garantiza un control de acceso ordenado y seguro.
-                </p>
+                <p>Cada empleado entra con su cuenta y ve solo lo que corresponde a su rol.</p>
               </div>
             </div>
 
             <div className="svc-project__block">
+              <div className="svc-project__icon" aria-hidden="true">📅</div>
               <div className="svc-project__info">
                 <h4>Calendario de Proyectos</h4>
-                <p>
-                  Vista mensual que centraliza todos los proyectos activos de la empresa, organizados día a día. Cada proyecto se identifica con un color según su estado: verde para finalizado, azul para iniciado y rojo para retrasado. Permite visualizar de un vistazo el avance general y detectar rápidamente demoras. Facilita el seguimiento sin necesidad de revisar cada proyecto por separado.
-                </p>
+                <p>Todos los proyectos del mes, con colores por estado y responsable.</p>
               </div>
             </div>
 
             <div className="svc-project__block">
+              <div className="svc-project__icon" aria-hidden="true">📊</div>
               <div className="svc-project__info">
                 <h4>Reportes y KPIs</h4>
-                <p>
-                  Muestra la estructura organizacional de la empresa, con acceso a cada área y a los empleados que la integran. Informa la evolución mensual de ganancias, el personal por área, los mejores clientes y los productos más y menos vendidos. Centraliza los indicadores clave para la toma de decisiones. Facilita una visión global del desempeño del negocio.
-                </p>
+                <p>Ganancias, personal por área y mejores clientes en un solo panel.</p>
               </div>
             </div>
 
             <div className="svc-project__block">
+              <div className="svc-project__icon" aria-hidden="true">👥</div>
               <div className="svc-project__info">
                 <h4>Gestión de Personal</h4>
-                <p>
-                  Módulo con dos apartados: empleados (legajo, nombre, área, puesto, nivel operativo, altas y bajas) y asistencias (presentes, licencias, partes de enfermo). Centraliza la información básica del personal y su control diario. Permite dar de alta y baja empleados según corresponda. Simplifica el seguimiento operativo del equipo.
-                </p>
+                <p>Empleados y asistencias: altas, bajas y control diario del equipo.</p>
               </div>
             </div>
 
             <div className="svc-project__block">
+              <div className="svc-project__icon" aria-hidden="true">🤝</div>
               <div className="svc-project__info">
                 <h4>Gestión de Clientes</h4>
-                <p>
-                  Módulo de administración de clientes con su base de datos (nombre, CUIT, mail) para un mejor control comercial. Incluye la facturación, con creación de facturas y presupuestos en estados de aprobado y pagado. Centraliza toda la relación comercial con los clientes de la empresa. Facilita el seguimiento de cobranzas y presupuestos pendientes.
-                </p>
+                <p>Clientes, facturas y presupuestos con estados claros.</p>
               </div>
             </div>
 
             <div className="svc-project__block">
+              <div className="svc-project__icon" aria-hidden="true">💰</div>
               <div className="svc-project__info">
                 <h4>Sueldos y liquidaciones</h4>
-                <p>
-                  Los recibos de cada período filtrados por año y mes, con la liquidación de cada empleado ya calculada. Desde acá se generan y se consultan los sueldos sin planillas ni cuentas a mano.
-                </p>
+                <p>Liquidaciones por período, calculadas automáticamente.</p>
               </div>
             </div>
 
             <div className="svc-project__block">
+              <div className="svc-project__icon" aria-hidden="true">📈</div>
               <div className="svc-project__info">
                 <h4>Finanzas</h4>
-                <p>
-                  Apartado de ganancias con KPIs detallados: ingresos, costo de mercadería vendida, gastos, sueldos, ganancia neta y margen, todo con gráficos. Incluye ventas (a partir de facturas aceptadas) y gastos propios de la empresa. Ofrece una visión financiera completa e integrada del negocio.
-                </p>
+                <p>Ingresos, gastos y margen, con gráficos y KPIs detallados.</p>
               </div>
             </div>
 
             <div className="svc-project__block">
+              <div className="svc-project__icon" aria-hidden="true">🏭</div>
               <div className="svc-project__info">
                 <h4>Recursos</h4>
-                <p>
-                  Apartado que muestra todos los activos de la empresa, con su estado (disponible, activo, en mantenimiento o dado de baja), a quién fue asignado y a qué sucursal pertenece. Incluye además el control de stock, destacando los productos de mayor circulación y con alarmas de stock bajo. Centraliza el seguimiento de bienes y mercadería de la empresa.
-                </p>
+                <p>Activos con estado y asignación, más stock con alarmas.</p>
               </div>
             </div>
 
             <div className="svc-project__block">
+              <div className="svc-project__icon" aria-hidden="true">💬</div>
               <div className="svc-project__info">
                 <h4>Mensajería Interna</h4>
-                <p>
-                  Canal de comunicación interno entre jefes, encargados y empleados en ambos sentidos. Incluye notificaciones automáticas sobre solicitudes de licencia y su estado de aprobación. Facilita la comunicación fluida dentro de la empresa sin depender de herramientas externas. Mantiene informado a cada usuario según su rol.
-                </p>
+                <p>Comunicación entre jefes y empleados con notificaciones.</p>
               </div>
             </div>
           </section>
