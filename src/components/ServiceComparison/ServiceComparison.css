@@ -78,6 +78,15 @@
   font-size: 0.9rem;
   font-weight: 600;
   animation: svc-more-bounce 2s infinite;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.svc-comparison__more:hover {
+  color: var(--water-light);
+  text-decoration: underline;
 }
 
 .svc-comparison__more svg {
