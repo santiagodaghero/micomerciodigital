@@ -146,6 +146,16 @@ const comparisonData = [
     custom: '✅ Incluido + integraciones (CRM, mailing)',
   },
   {
+    feature: 'Modo claro y oscuro',
+    standard: 'No incluido',
+    custom: '✅ Incluido',
+  },
+  {
+    feature: 'Reservas Turnos Online',
+    standard: 'No incluido',
+    custom: '✅ Incluido',
+  },
+  {
     feature: 'Revisiones post-entrega',
     standard: '1 revisión',
     custom: '3 revisiones',
