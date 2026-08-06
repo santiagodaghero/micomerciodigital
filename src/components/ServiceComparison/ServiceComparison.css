@@ -111,7 +111,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  align-items: start;
 }
 
 .svc-project__title {
@@ -129,6 +128,7 @@
   border-radius: var(--radius);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   padding: 1.5rem;
+  min-height: 320px;
 }
 
 .svc-project__info h4 {
