@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { servicesData } from '../components/Services/servicesData'
 import Slider from '../components/Slider/Slider'
@@ -321,6 +322,21 @@ export default function ServiceDetail() {
   const { id } = useParams()
   const service = servicesData.find((s) => s.id === Number(id))
   const projects = projectsData[Number(id)] || []
+  const [lightbox, setLightbox] = useState(null)
+
+  useEffect(() => {
+    if (!lightbox) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') setLightbox(null)
+    }
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = prevOverflow
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [lightbox])
 
   if (!service) {
     return (
@@ -434,6 +450,7 @@ export default function ServiceDetail() {
         )}
 
         {service.id === 5 && (
+          <>
           <section className="svc-comparison">
             <h3 className="svc-comparison__title">¿Producto Estándar o Personalizado?</h3>
             <div className="svc-comparison__text">
@@ -452,9 +469,243 @@ export default function ServiceDetail() {
                 El costo final se define en base a los módulos que elijas y el nivel de personalización que necesite tu empresa, cotizándose de forma conjunta antes de comenzar el desarrollo.
               </p>
             </div>
+            <div className="svc-comparison__more">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+              <span>Conocé más sobre el proyecto</span>
+            </div>
           </section>
+
+          <section className="svc-project">
+            <h3 className="svc-project__title">Así se ve por dentro</h3>
+
+            <div className="svc-project__block">
+              <div className="svc-project__media">
+                <button
+                  type="button"
+                  className="svc-project__zoom"
+                  onClick={() =>
+                    setLightbox({
+                      src: '/images/control-organizacional/login.png',
+                      alt: 'Pantalla de inicio de sesión',
+                    })
+                  }
+                  aria-label="Ampliar imagen"
+                >
+                  <img src="/images/control-organizacional/login.png" alt="Pantalla de inicio de sesión" loading="lazy" />
+                </button>
+              </div>
+              <div className="svc-project__info">
+                <h4>Acceso seguro</h4>
+                <p>
+                  Cada empleado entra con su propia cuenta y ve solo lo que le corresponde según su rol. El sistema protege la información sensible de la empresa desde el primer paso.
+                </p>
+              </div>
+            </div>
+
+            <div className="svc-project__block">
+              <div className="svc-project__media">
+                <button
+                  type="button"
+                  className="svc-project__zoom"
+                  onClick={() =>
+                    setLightbox({
+                      src: '/images/control-organizacional/calendario.png',
+                      alt: 'Calendario de proyectos',
+                    })
+                  }
+                  aria-label="Ampliar imagen"
+                >
+                  <img src="/images/control-organizacional/calendario.png" alt="Calendario de proyectos" loading="lazy" />
+                </button>
+              </div>
+              <div className="svc-project__info">
+                <h4>Calendario de proyectos</h4>
+                <p>
+                  El mes completo en una sola vista, con los proyectos marcados día a día y coloreados según su estado: verde si están finalizados, azul si recién inician, rojo si están demorados. Cada evento muestra quién es el responsable, y al tocar un día se abre el detalle con feriados, vacaciones, licencias y presentismo.
+                </p>
+              </div>
+            </div>
+
+            <div className="svc-project__block">
+              <div className="svc-project__media">
+                <button
+                  type="button"
+                  className="svc-project__zoom"
+                  onClick={() =>
+                    setLightbox({
+                      src: '/images/control-organizacional/reportes.png',
+                      alt: 'Panel de control con indicadores',
+                    })
+                  }
+                  aria-label="Ampliar imagen"
+                >
+                  <img src="/images/control-organizacional/reportes.png" alt="Panel de control con indicadores" loading="lazy" />
+                </button>
+              </div>
+              <div className="svc-project__info">
+                <h4>Reportes y KPIs</h4>
+                <p>
+                  El panel de control reúne los indicadores clave de la empresa: ingresos por ventas, costo de mercadería, gastos, sueldos, ganancia neta y margen. Podés filtrar por todo el histórico, este año, este mes o un rango de fechas a medida, y ver la evolución mes a mes en un gráfico.
+                </p>
+              </div>
+            </div>
+
+            <div className="svc-project__block">
+              <div className="svc-project__media">
+                <button
+                  type="button"
+                  className="svc-project__zoom"
+                  onClick={() =>
+                    setLightbox({
+                      src: '/images/control-organizacional/empleados.png',
+                      alt: 'Listado de empleados',
+                    })
+                  }
+                  aria-label="Ampliar imagen"
+                >
+                  <img src="/images/control-organizacional/empleados.png" alt="Listado de empleados" loading="lazy" />
+                </button>
+              </div>
+              <div className="svc-project__info">
+                <h4>Gestión de empleados</h4>
+                <p>
+                  Todo el equipo en un listado con búsqueda instantánea por nombre, legajo o DNI. Cada ficha concentra los datos personales, el área y el rol, y desde acá el administrador carga nuevos empleados con un clic.
+                </p>
+              </div>
+            </div>
+
+            <div className="svc-project__block">
+              <div className="svc-project__media">
+                <button
+                  type="button"
+                  className="svc-project__zoom"
+                  onClick={() =>
+                    setLightbox({
+                      src: '/images/control-organizacional/asistencia.png',
+                      alt: 'Registro de asistencia',
+                    })
+                  }
+                  aria-label="Ampliar imagen"
+                >
+                  <img src="/images/control-organizacional/asistencia.png" alt="Registro de asistencia" loading="lazy" />
+                </button>
+              </div>
+              <div className="svc-project__info">
+                <h4>Control de asistencia</h4>
+                <p>
+                  El registro del día en números: empleados activos, asistencias de hoy e inasistencias de hoy de un solo vistazo. El historial de marcaciones de cada persona queda guardado y listo para consultar cuando lo necesites.
+                </p>
+              </div>
+            </div>
+
+            <div className="svc-project__block">
+              <div className="svc-project__media">
+                <button
+                  type="button"
+                  className="svc-project__zoom"
+                  onClick={() =>
+                    setLightbox({
+                      src: '/images/control-organizacional/sueldos.png',
+                      alt: 'Liquidación de sueldos',
+                    })
+                  }
+                  aria-label="Ampliar imagen"
+                >
+                  <img src="/images/control-organizacional/sueldos.png" alt="Liquidación de sueldos" loading="lazy" />
+                </button>
+              </div>
+              <div className="svc-project__info">
+                <h4>Sueldos y liquidaciones</h4>
+                <p>
+                  Los recibos de cada período filtrados por año y mes, con la liquidación de cada empleado ya calculada. Desde acá se generan y se consultan los sueldos sin planillas ni cuentas a mano.
+                </p>
+              </div>
+            </div>
+
+            <div className="svc-project__block">
+              <div className="svc-project__media">
+                <button
+                  type="button"
+                  className="svc-project__zoom"
+                  onClick={() =>
+                    setLightbox({
+                      src: '/images/control-organizacional/ganancias.png',
+                      alt: 'Ganancias y finanzas',
+                    })
+                  }
+                  aria-label="Ampliar imagen"
+                >
+                  <img src="/images/control-organizacional/ganancias.png" alt="Ganancias y finanzas" loading="lazy" />
+                </button>
+              </div>
+              <div className="svc-project__info">
+                <h4>Ganancias y finanzas</h4>
+                <p>
+                  El resultado real del negocio: ingresos, costo de mercadería vendida, gastos y sueldos, con la ganancia neta y el margen calculados automáticamente. Incluye la evolución mensual de ingresos contra egresos y el detalle por producto, con su utilidad bruta.
+                </p>
+              </div>
+            </div>
+
+            <div className="svc-project__block">
+              <div className="svc-project__media">
+                <Slider visibleCount={1}>
+                  <button type="button" className="svc-project__zoom" onClick={() => setLightbox({ src: '/images/control-organizacional/proyecto1.png', alt: 'Proyectos: listado y estados' })} aria-label="Ampliar imagen">
+                    <img src="/images/control-organizacional/proyecto1.png" alt="Proyectos: listado y estados" loading="lazy" />
+                  </button>
+                  <button type="button" className="svc-project__zoom" onClick={() => setLightbox({ src: '/images/control-organizacional/proyecto2.png', alt: 'Proyectos: panel del módulo' })} aria-label="Ampliar imagen">
+                    <img src="/images/control-organizacional/proyecto2.png" alt="Proyectos: panel del módulo" loading="lazy" />
+                  </button>
+                  <button type="button" className="svc-project__zoom" onClick={() => setLightbox({ src: '/images/control-organizacional/proyecto3.png', alt: 'Proyectos: detalle de tareas' })} aria-label="Ampliar imagen">
+                    <img src="/images/control-organizacional/proyecto3.png" alt="Proyectos: detalle de tareas" loading="lazy" />
+                  </button>
+                </Slider>
+              </div>
+              <div className="svc-project__info">
+                <h4>Proyectos y tareas</h4>
+                <p>
+                  Los indicadores del módulo al toque: proyectos activos, iniciados, en proceso, atrasados y de prioridad alta. Las tarjetas muestran el responsable, el estado, el avance en porcentaje, la prioridad y la fecha estimada de cierre, con filtros por estado para enfocarse en lo que importa.
+                </p>
+              </div>
+            </div>
+
+            <div className="svc-project__block">
+              <div className="svc-project__media">
+                <button
+                  type="button"
+                  className="svc-project__zoom"
+                  onClick={() =>
+                    setLightbox({
+                      src: '/images/control-organizacional/stock.png',
+                      alt: 'Control de stock e inventario',
+                    })
+                  }
+                  aria-label="Ampliar imagen"
+                >
+                  <img src="/images/control-organizacional/stock.png" alt="Control de stock e inventario" loading="lazy" />
+                </button>
+              </div>
+              <div className="svc-project__info">
+                <h4>Stock e inventario</h4>
+                <p>
+                  Productos, cantidades y valores en un mismo lugar, con alertas de stock bajo y búsqueda por nombre o código. Cada artículo muestra su mínimo, ubicación y valor, y los movimientos de entrada y salida se registran con un clic.
+                </p>
+              </div>
+            </div>
+          </section>
+          </>
         )}
       </main>
+
+      {lightbox && (
+        <div className="svc-lightbox" onClick={() => setLightbox(null)} role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+          <button type="button" className="svc-lightbox__close" onClick={() => setLightbox(null)} aria-label="Cerrar">
+            ×
+          </button>
+          <img src={lightbox.src} alt={lightbox.alt} onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
     </div>
   )
 }
