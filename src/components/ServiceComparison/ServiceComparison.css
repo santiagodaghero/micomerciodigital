@@ -140,33 +140,30 @@
 }
 
 @media (max-width: 768px) {
-.svc-para-quien {
-  margin-top: 3rem;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+.svc-project__intro {
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: calc(var(--radius) * 2);
+  border-radius: calc(var(--radius) * 1.5);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   padding: 2rem 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
-.svc-para-quien__title {
+.svc-project__intro-title {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 1rem;
 }
 
-.svc-para-quien__text {
+.svc-project__intro-text {
   font-size: 0.95rem;
   color: var(--text-light);
   line-height: 1.7;
   margin-bottom: 0.75rem;
 }
 
-.svc-para-quien__text:last-child {
+.svc-project__intro-text:last-child {
   margin-bottom: 0;
 }
 

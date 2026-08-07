@@ -498,17 +498,17 @@ export default function ServiceDetail() {
             </div>
           </section>
 
-          <section className="svc-para-quien">
-            <h3 className="svc-para-quien__title">¿Para quién es este proyecto?</h3>
-            <p className="svc-para-quien__text">
-              Pensado para todo tipo de organización: comercios, estudios, pymes que recién empiezan a ordenarse y organizaciones grandes que quieren unificar sus áreas en un solo lugar.
-            </p>
-            <p className="svc-para-quien__text">
-              Sin un sistema centralizado, la información se dispersa entre planillas y la memoria de cada responsable y eso le cuesta plata y tiempo a la empresa.
-            </p>
-          </section>
-
           <section id="svc-proyecto-tarjetas" className="svc-project">
+            <div className="svc-project__intro">
+              <h3 className="svc-project__intro-title">¿Para quién es este proyecto?</h3>
+              <p className="svc-project__intro-text">
+                Pensado para todo tipo de organización: comercios, estudios, pymes que recién empiezan a ordenarse y organizaciones grandes que quieren unificar sus áreas en un solo lugar.
+              </p>
+              <p className="svc-project__intro-text">
+                Sin un sistema centralizado, la información se dispersa entre planillas y la memoria de cada responsable y eso le cuesta plata y tiempo a la empresa.
+              </p>
+            </div>
+
             <h3 className="svc-project__title">Así se ve por dentro</h3>
 
             <div className="svc-project__grid">
