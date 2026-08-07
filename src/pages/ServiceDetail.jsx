@@ -37,15 +37,15 @@ function ModuleIcon({ name }) {
 }
 
 const svcModules = [
-  { title: 'Acceso y roles', text: 'Login por jerarquía: cada uno ve solo lo que le corresponde.', icon: 'lock', accent: 'water' },
-  { title: 'Calendario de proyectos', text: 'Vista mensual con estado por color: verde, azul y rojo.', icon: 'calendar', accent: 'sky' },
-  { title: 'Reportes y KPIs', text: 'Ganancias, áreas y productos en una sola vista.', icon: 'chart', accent: 'water' },
-  { title: 'Gestión de personal', text: 'Legajos, altas y bajas, asistencia del día a día.', icon: 'users', accent: 'sky' },
-  { title: 'Gestión de clientes', text: 'Base de clientes, facturación y presupuestos.', icon: 'briefcase', accent: 'water' },
-  { title: 'Sueldos y liquidaciones', text: 'Recibos por período, liquidación ya calculada.', icon: 'dollar', accent: 'sky' },
-  { title: 'Finanzas', text: 'Ingresos, gastos y margen con gráficos claros.', icon: 'trending', accent: 'water' },
-  { title: 'Recursos', text: 'Activos y stock, con alarmas de reposición.', icon: 'box', accent: 'sky' },
-  { title: 'Mensajería interna', text: 'Comunicación directa entre jefes y equipo.', icon: 'message', accent: 'water' },
+  { title: 'Acceso y Roles', text: 'Login diferenciado por jerarquía y rol: jefes de área, encargados y empleados de planta. Cada uno accede solo a las secciones que le corresponden, protegiendo la información sensible de la empresa.', icon: 'lock', accent: 'water' },
+  { title: 'Calendario de Proyectos', text: 'Vista mensual con todos los proyectos ubicados día a día. Cada uno se colorea según su estado: verde finalizado, azul iniciado y rojo retrasado.', icon: 'calendar', accent: 'sky' },
+  { title: 'Reportes y KPIs', text: 'Estructura organizacional por área con sus empleados, evolución mensual de ganancias, mejores clientes y productos más y menos vendidos, todo en una sola vista.', icon: 'chart', accent: 'water' },
+  { title: 'Gestión de Personal', text: 'Legajos con nombre, área, puesto y nivel operativo, con altas y bajas de empleados. Incluye el registro diario de asistencias: presentes, licencias y partes de enfermo.', icon: 'users', accent: 'sky' },
+  { title: 'Gestión de Clientes', text: 'Base de datos de clientes con nombre, CUIT y mail. Incluye facturación, con presupuestos y facturas en estados de aprobado y pagado.', icon: 'briefcase', accent: 'water' },
+  { title: 'Sueldos y Liquidaciones', text: 'Recibos de sueldo organizados por período, con la liquidación ya calculada para cada empleado.', icon: 'dollar', accent: 'sky' },
+  { title: 'Finanzas', text: 'Ingresos, costo de mercadería vendida, gastos, sueldos, ganancia neta y margen, con gráficos claros. Incluye ventas y gastos propios de la empresa.', icon: 'trending', accent: 'water' },
+  { title: 'Recursos', text: 'Activos de la empresa con su estado, responsable asignado y sucursal. Incluye control de stock con alarmas de reposición.', icon: 'box', accent: 'sky' },
+  { title: 'Mensajería Interna', text: 'Comunicación directa entre jefes, encargados y empleados, con notificaciones de solicitudes de licencia y su estado de aprobación.', icon: 'message', accent: 'water' },
 ]
 
 const projectsData = {
@@ -427,37 +427,75 @@ export default function ServiceDetail() {
           </div>
         </div>
 
-        {projects.length > 0 && (
-          <section className="detail__projects">
-            <AnimatedSection>
-              <h2 className="detail__projects-title">Propuesta de proyecto</h2>
-              <p className="detail__projects-subtitle">
-                Ejemplo de un e-commerce que puede adaptarse a lo que necesitás, y si buscás algo más personalizado también podemos hacerlo
-              </p>
-            </AnimatedSection>
-            <Slider visibleCount={3}>
-              {projects.map((project) => (
-                <div key={project.name} className="project-card">
-                  <div className="project-card__image">
-                    {project.image.length > 2 ? (
-                      <img src={project.image} alt={project.name} />
-                    ) : (
-                      <span>{project.image}</span>
-                    )}
-                  </div>
-                  <div className="project-card__body">
-                    <h3 className="project-card__title">{project.name}</h3>
-                    <p className="project-card__desc">{project.description}</p>
-                    {project.url && (
-                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-card__link">
-                        Ver proyecto →
-                      </a>
-                    )}
-                  </div>
+        {service.id === 5 && projects.length > 0 ? (
+          <section className="detail__projects svc-demo-pricing">
+            <div className="svc-demo-pricing__grid">
+              <div className="project-card">
+                <div className="project-card__image">
+                  <span>{projects[0].image}</span>
                 </div>
-              ))}
-            </Slider>
+                <div className="project-card__body">
+                  <h3 className="project-card__title">{projects[0].name}</h3>
+                  <p className="project-card__desc">{projects[0].description}</p>
+                  <a href="https://tudemo.com" target="_blank" rel="noopener noreferrer" className="project-card__link">
+                    Ingresá a la demo →
+                  </a>
+                </div>
+              </div>
+
+              <div className="svc-pricing-card">
+                <h3 className="svc-pricing-card__title">¿Producto estándar o personalizado?</h3>
+                <p className="svc-pricing-card__text">
+                  Es un desarrollo a medida por naturaleza: un sistema que se adapta a vos, no al revés, 100% personalizado.
+                </p>
+                <p className="svc-pricing-card__text">
+                  Cada empresa tiene procesos, equipos y necesidades diferentes. En lugar de ofrecer un sistema rígido con funciones que quizás nunca uses, construimos una solución modular.
+                </p>
+                <p className="svc-pricing-card__text">
+                  Vos elegís qué necesitás hoy, y nosotros implementamos cada módulo para que se integre con la forma en que trabaja tu empresa.
+                </p>
+                <h4 className="svc-pricing-card__subtitle">¿Cómo funciona?</h4>
+                <ul className="svc-pricing-card__list">
+                  <li><strong>Base del sistema</strong> – La estructura principal sobre la que funciona toda la plataforma.</li>
+                  <li><strong>Módulos personalizados</strong> – Elegí los módulos que mejor se adapten a tu negocio.</li>
+                  <li><strong>Implementación a medida</strong> – Configuramos procesos, permisos y reglas según tu forma de trabajar.</li>
+                </ul>
+              </div>
+            </div>
           </section>
+        ) : (
+          projects.length > 0 && (
+            <section className="detail__projects">
+              <AnimatedSection>
+                <h2 className="detail__projects-title">Propuesta de proyecto</h2>
+                <p className="detail__projects-subtitle">
+                  Ejemplo de un e-commerce que puede adaptarse a lo que necesitás, y si buscás algo más personalizado también podemos hacerlo
+                </p>
+              </AnimatedSection>
+              <Slider visibleCount={3}>
+                {projects.map((project) => (
+                  <div key={project.name} className="project-card">
+                    <div className="project-card__image">
+                      {project.image.length > 2 ? (
+                        <img src={project.image} alt={project.name} />
+                      ) : (
+                        <span>{project.image}</span>
+                      )}
+                    </div>
+                    <div className="project-card__body">
+                      <h3 className="project-card__title">{project.name}</h3>
+                      <p className="project-card__desc">{project.description}</p>
+                      {project.url && (
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-card__link">
+                          Ver proyecto →
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </section>
+          )
         )}
 
         {service.id === 1 && (
@@ -478,26 +516,6 @@ export default function ServiceDetail() {
 
         {service.id === 5 && (
           <>
-          <section className="svc-comparison">
-            <h3 className="svc-comparison__title">¿Producto Estándar o Personalizado?</h3>
-            <div className="svc-comparison__text">
-              <p>
-                Este producto lo pensamos distinto porque, en la práctica, es un desarrollo a medida por naturaleza. Login, empleados, asistencia, sueldos, proyectos y stock son módulos que dependen de la lógica propia de cada empresa, así que ofrecer una versión "estándar" sería poco honesto de nuestra parte: prácticamente ningún cliente podría usarlo tal cual sale de fábrica.
-              </p>
-              <p>
-                Por eso, en vez de vender estándar o personalizado, armamos un paquete por módulos:
-              </p>
-              <ul>
-                <li><strong>Base (login + empleados + asistencia):</strong> el núcleo del sistema, incluido siempre.</li>
-                <li><strong>Módulos adicionales (sueldos, proyectos, stock):</strong> se cotizan aparte y los vas sumando según lo que tu empresa necesite.</li>
-                <li><strong>Personalización de lógica (reglas de sueldo, permisos por rol, reportes específicos):</strong> se cotiza aparte en cualquier paquete que elijas.</li>
-              </ul>
-              <p>
-                El costo final se define en base a los módulos que elijas y el nivel de personalización que necesite tu empresa, cotizándose de forma conjunta antes de comenzar el desarrollo.
-              </p>
-            </div>
-          </section>
-
           <section id="svc-proyecto-tarjetas" className="svc-project">
             <div className="svc-project__intro">
               <h3 className="svc-project__intro-title">¿Para quién es este proyecto?</h3>
@@ -509,7 +527,7 @@ export default function ServiceDetail() {
               </p>
             </div>
 
-            <h3 className="svc-project__title">Así se ve por dentro</h3>
+            <h3 className="svc-project__title">Así podría verse el control de tu empresa</h3>
 
             <div className="svc-project__grid">
               {svcModules.map((mod) => (
