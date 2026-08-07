@@ -168,9 +168,15 @@
 }
 
 .svc-project__closing {
-  margin-top: 1.75rem;
+  margin: 3rem auto 0;
+  max-width: 720px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 1.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 2.5rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text);
 }
