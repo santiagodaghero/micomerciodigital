@@ -479,32 +479,6 @@ export default function ServiceDetail() {
         {service.id === 5 && (
           <>
           <section className="svc-comparison">
-            <h3 className="svc-comparison__title">¿Para quién es este proyecto?</h3>
-            <div className="svc-comparison__text">
-              <p>
-                Este sistema está pensado para todo tipo de organización: comercios, estudios, institutos, pymes que recién empiezan a ordenarse, empresas medianas que necesitan dejar las planillas y organizaciones grandes que quieren unificar sus áreas en un solo lugar.
-              </p>
-              <p>
-                Sin un sistema centralizado, la información se dispersa entre planillas, papeles y la memoria de cada responsable. Eso se traduce en errores de cálculo, sueldos mal liquidados, una asistencia que nadie controla y un stock que se pierde sin aviso. Cada uno de esos descuidos le cuesta plata y tiempo a la empresa, sin importar su tamaño.
-              </p>
-              <p>
-                Este proyecto existe para terminar con ese desorden: todo en un solo lugar, con acceso según el rol de cada persona, procesos que se resuelven solos y decisiones tomadas con números reales en lugar de suposiciones.
-              </p>
-              <ul>
-                <li><strong>Orden y control:</strong> todo el equipo y sus datos centralizados en un solo sistema.</li>
-                <li><strong>Asistencia al día:</strong> presentismo y ausencias sin planillas, con el historial de cada persona.</li>
-                <li><strong>Sueldos sin cuentas a mano:</strong> liquidaciones calculadas automáticamente, período por período.</li>
-                <li><strong>Proyectos bajo control:</strong> responsables, estados y avance de cada trabajo siempre visibles.</li>
-                <li><strong>Stock que no se pierde:</strong> alertas de reposición y movimientos registrados con un clic.</li>
-                <li><strong>Decidir con datos:</strong> reportes y KPIs de ganancias, costos y márgenes en tiempo real.</li>
-              </ul>
-              <p>
-                Seas una empresa chica que da su primer paso o una organización grande que necesita ordenar varias áreas, el sistema se adapta por módulos a tu tamaño y a tu forma de trabajar: arrancás por lo que necesitás hoy y vas sumando funciones a medida que crecés.
-              </p>
-            </div>
-          </section>
-
-          <section className="svc-comparison">
             <h3 className="svc-comparison__title">¿Producto Estándar o Personalizado?</h3>
             <div className="svc-comparison__text">
               <p>
@@ -524,6 +498,16 @@ export default function ServiceDetail() {
             </div>
           </section>
 
+          <section className="svc-para-quien">
+            <h3 className="svc-para-quien__title">¿Para quién es este proyecto?</h3>
+            <p className="svc-para-quien__text">
+              Pensado para todo tipo de organización: comercios, estudios, pymes que recién empiezan a ordenarse y organizaciones grandes que quieren unificar sus áreas en un solo lugar.
+            </p>
+            <p className="svc-para-quien__text">
+              Sin un sistema centralizado, la información se dispersa entre planillas y la memoria de cada responsable y eso le cuesta plata y tiempo a la empresa.
+            </p>
+          </section>
+
           <section id="svc-proyecto-tarjetas" className="svc-project">
             <h3 className="svc-project__title">Así se ve por dentro</h3>
 
@@ -540,6 +524,10 @@ export default function ServiceDetail() {
                 </div>
               ))}
             </div>
+
+            <p className="svc-project__closing">
+              Seas una empresa chica que da su primer paso o una organización grande, el sistema se adapta por módulos a tu tamaño.
+            </p>
           </section>
           </>
         )}
