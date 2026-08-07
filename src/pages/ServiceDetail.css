@@ -230,6 +230,7 @@
   color: var(--primary);
   text-decoration: none;
   transition: color 0.2s;
+  cursor: pointer;
 }
 
 .project-card__link:hover {
