@@ -5,6 +5,49 @@ import AnimatedSection from '../components/AnimatedSection/AnimatedSection'
 import ServiceComparison from '../components/ServiceComparison/ServiceComparison'
 import './ServiceDetail.css'
 
+const moduleIconPaths = {
+  lock: 'M7 11V7a5 5 0 0 1 10 0v4|rect:3,11,18,10,2',
+  calendar: 'M16 2v4M8 2v4M3 10h18|rect:3,4,18,18,2',
+  chart: 'M7 20V12M12 20V8M17 20v-6|rect:3,3,18,18,2',
+  users: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2|circle:9,7,4|M23 21v-2a4 4 0 0 0-3-3.87|M16 3.13a4 4 0 0 1 0 7.75',
+  briefcase: 'M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16|rect:2,7,20,14,2',
+  dollar: 'M12 1v22|M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6',
+  trending: 'M23 6l-9.5 9.5-5-5L1 18|M17 6h6v6',
+  box: 'M21 8L12 3 3 8l9 5 9-5z|M3 8v8l9 5 9-5V8|M12 13v8',
+  message: 'M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 8.5-8.5 8.5 8.5 0 0 1 8.5 8.5z',
+}
+
+function ModuleIcon({ name }) {
+  const shapes = moduleIconPaths[name].split('|')
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20" aria-hidden="true">
+      {shapes.map((shape, i) => {
+        if (shape.startsWith('rect:')) {
+          const [x, y, w, h, r] = shape.replace('rect:', '').split(',')
+          return <rect key={i} x={x} y={y} width={w} height={h} rx={r} />
+        }
+        if (shape.startsWith('circle:')) {
+          const [cx, cy, r] = shape.replace('circle:', '').split(',')
+          return <circle key={i} cx={cx} cy={cy} r={r} />
+        }
+        return <path key={i} d={shape} />
+      })}
+    </svg>
+  )
+}
+
+const svcModules = [
+  { title: 'Acceso y roles', text: 'Login por jerarquía: cada uno ve solo lo que le corresponde.', icon: 'lock', accent: 'water' },
+  { title: 'Calendario de proyectos', text: 'Vista mensual con estado por color: verde, azul y rojo.', icon: 'calendar', accent: 'sky' },
+  { title: 'Reportes y KPIs', text: 'Ganancias, áreas y productos en una sola vista.', icon: 'chart', accent: 'water' },
+  { title: 'Gestión de personal', text: 'Legajos, altas y bajas, asistencia del día a día.', icon: 'users', accent: 'sky' },
+  { title: 'Gestión de clientes', text: 'Base de clientes, facturación y presupuestos.', icon: 'briefcase', accent: 'water' },
+  { title: 'Sueldos y liquidaciones', text: 'Recibos por período, liquidación ya calculada.', icon: 'dollar', accent: 'sky' },
+  { title: 'Finanzas', text: 'Ingresos, gastos y margen con gráficos claros.', icon: 'trending', accent: 'water' },
+  { title: 'Recursos', text: 'Activos y stock, con alarmas de reposición.', icon: 'box', accent: 'sky' },
+  { title: 'Mensajería interna', text: 'Comunicación directa entre jefes y equipo.', icon: 'message', accent: 'water' },
+]
+
 const projectsData = {
   1: [
     {
@@ -484,85 +527,18 @@ export default function ServiceDetail() {
           <section id="svc-proyecto-tarjetas" className="svc-project">
             <h3 className="svc-project__title">Así se ve por dentro</h3>
 
-            <div className="svc-project__block">
-              <div className="svc-project__info">
-                <h4>Acceso y Roles</h4>
-                <p>
-                  Sistema de login donde cada empleado ingresa con usuario y contraseña propios. El acceso a las distintas secciones de la aplicación varía según la jerarquía y el rol: jefes de área, encargados o empleados de planta. Así se protege la información sensible de la empresa, mostrando solo lo que corresponde a cada nivel. Garantiza un control de acceso ordenado y seguro.
-                </p>
-              </div>
-            </div>
-
-            <div className="svc-project__block">
-              <div className="svc-project__info">
-                <h4>Calendario de Proyectos</h4>
-                <p>
-                  Vista mensual que centraliza todos los proyectos activos de la empresa, organizados día a día. Cada proyecto se identifica con un color según su estado: verde para finalizado, azul para iniciado y rojo para retrasado. Permite visualizar de un vistazo el avance general y detectar rápidamente demoras. Facilita el seguimiento sin necesidad de revisar cada proyecto por separado.
-                </p>
-              </div>
-            </div>
-
-            <div className="svc-project__block">
-              <div className="svc-project__info">
-                <h4>Reportes y KPIs</h4>
-                <p>
-                  Muestra la estructura organizacional de la empresa, con acceso a cada área y a los empleados que la integran. Informa la evolución mensual de ganancias, el personal por área, los mejores clientes y los productos más y menos vendidos. Centraliza los indicadores clave para la toma de decisiones. Facilita una visión global del desempeño del negocio.
-                </p>
-              </div>
-            </div>
-
-            <div className="svc-project__block">
-              <div className="svc-project__info">
-                <h4>Gestión de Personal</h4>
-                <p>
-                  Módulo con dos apartados: empleados (legajo, nombre, área, puesto, nivel operativo, altas y bajas) y asistencias (presentes, licencias, partes de enfermo). Centraliza la información básica del personal y su control diario. Permite dar de alta y baja empleados según corresponda. Simplifica el seguimiento operativo del equipo.
-                </p>
-              </div>
-            </div>
-
-            <div className="svc-project__block">
-              <div className="svc-project__info">
-                <h4>Gestión de Clientes</h4>
-                <p>
-                  Módulo de administración de clientes con su base de datos (nombre, CUIT, mail) para un mejor control comercial. Incluye la facturación, con creación de facturas y presupuestos en estados de aprobado y pagado. Centraliza toda la relación comercial con los clientes de la empresa. Facilita el seguimiento de cobranzas y presupuestos pendientes.
-                </p>
-              </div>
-            </div>
-
-            <div className="svc-project__block">
-              <div className="svc-project__info">
-                <h4>Sueldos y liquidaciones</h4>
-                <p>
-                  Los recibos de cada período filtrados por año y mes, con la liquidación de cada empleado ya calculada. Desde acá se generan y se consultan los sueldos sin planillas ni cuentas a mano.
-                </p>
-              </div>
-            </div>
-
-            <div className="svc-project__block">
-              <div className="svc-project__info">
-                <h4>Finanzas</h4>
-                <p>
-                  Apartado de ganancias con KPIs detallados: ingresos, costo de mercadería vendida, gastos, sueldos, ganancia neta y margen, todo con gráficos. Incluye ventas (a partir de facturas aceptadas) y gastos propios de la empresa. Ofrece una visión financiera completa e integrada del negocio.
-                </p>
-              </div>
-            </div>
-
-            <div className="svc-project__block">
-              <div className="svc-project__info">
-                <h4>Recursos</h4>
-                <p>
-                  Apartado que muestra todos los activos de la empresa, con su estado (disponible, activo, en mantenimiento o dado de baja), a quién fue asignado y a qué sucursal pertenece. Incluye además el control de stock, destacando los productos de mayor circulación y con alarmas de stock bajo. Centraliza el seguimiento de bienes y mercadería de la empresa.
-                </p>
-              </div>
-            </div>
-
-            <div className="svc-project__block">
-              <div className="svc-project__info">
-                <h4>Mensajería Interna</h4>
-                <p>
-                  Canal de comunicación interno entre jefes, encargados y empleados en ambos sentidos. Incluye notificaciones automáticas sobre solicitudes de licencia y su estado de aprobación. Facilita la comunicación fluida dentro de la empresa sin depender de herramientas externas. Mantiene informado a cada usuario según su rol.
-                </p>
-              </div>
+            <div className="svc-project__grid">
+              {svcModules.map((mod) => (
+                <div key={mod.title} className={`svc-project__block svc-project__block--${mod.accent}`}>
+                  <div className={`svc-project__icon svc-project__icon--${mod.accent}`}>
+                    <ModuleIcon name={mod.icon} />
+                  </div>
+                  <div className="svc-project__info">
+                    <h4>{mod.title}</h4>
+                    <p>{mod.text}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
           </>
